@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NGOFinanceDashboard")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0815776dcdb746d4ef43949e78ae777a1e3fb042")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74e07cbfd4c9c58fed4b1fa798953ed953611cd1")]
 [assembly: System.Reflection.AssemblyProductAttribute("NGOFinanceDashboard")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NGOFinanceDashboard")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
