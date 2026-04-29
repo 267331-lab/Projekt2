@@ -3,6 +3,8 @@ using Microsoft.Playwright;
 using HtmlDoc = HtmlAgilityPack.HtmlDocument;
 using NGOFinanceDashboard.Models;
 using NGOFinanceDashboard.Utilities.Exceptions;
+using NGOFinanceDashboard.Utilities;
+
 using System.Globalization;
 
 namespace NGOFinanceDashboard.Services;
@@ -22,13 +24,10 @@ public class FioDataFetcher : IDataFetcher
 {
     private readonly HttpClient _httpClient;
     private readonly IFioParser _parser;
-    private readonly string _baseUrl;
-
-    public FioDataFetcher(HttpClient httpClient, IFioParser parser, string? baseUrl = null)
+    public FioDataFetcher(HttpClient httpClient, IFioParser parser)
     {
         _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
         _parser = parser ?? throw new ArgumentNullException(nameof(parser));
-        _baseUrl = baseUrl ?? "https://ib.fio.cz/ib/transparent?a=2200272480&f=27.04.2025&t=27.04.2026";
 
         ConfigureHttpClient();
     }
@@ -45,6 +44,8 @@ public class FioDataFetcher : IDataFetcher
     {
         if (string.IsNullOrWhiteSpace(fioAccountUrl))
             throw new ValidationException(nameof(fioAccountUrl), "URL nemůže být prázdné");
+        if (!fioAccountUrl.Contains("ib.fio.cz/ib/transparent?"))
+            throw new InvalidURLException($"Zadaná Url {fioAccountUrl} nepatří FIO transparentnímu účtu");
 
         try
         {
@@ -63,14 +64,12 @@ public class FioDataFetcher : IDataFetcher
         }
         catch (PlaywrightException ex)
         {
-            throw new DataFetchException(fioAccountUrl, "Playwright selhala - nejde se připojit", null);
-        }
-        catch (TimeoutException ex)
-        {
-            throw new DataFetchException(fioAccountUrl, "Timeout - server neodpovídá", null);
+            ExceptionHandler.HandleException(ex, "FioDataFetcher.FetchTransactionsAsync");
+            throw new DataFetchException(fioAccountUrl, "Playwright failed", null);
         }
         catch (Exception ex)
         {
+            ExceptionHandler.HandleException(ex, "FioDataFetcher.FetchTransactionsAsync");
             throw new DataFetchException(fioAccountUrl, ex.Message, null);
         }
     }
@@ -90,7 +89,7 @@ public class FioHtmlParser : IFioParser
             doc.LoadHtml(html);
 
             var rows = doc.DocumentNode.SelectNodes("//table[contains(@class,'table')]/tbody/tr");
-            
+
             if (rows == null || rows.Count == 0)
                 throw new HtmlParsingException("Tabulka s transakcemi nenalezena");
 
@@ -117,7 +116,13 @@ public class FioHtmlParser : IFioParser
                 }
                 catch (FormatException ex)
                 {
-                    throw new HtmlParsingException($"Chyba při parsování řádku: {ex.Message}");
+                    ExceptionHandler.HandleException(ex, "FioHtmlParser.ParseRawHtml");
+                    throw new HtmlParsingException($"Format error: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    ExceptionHandler.HandleException(ex, "FioHtmlParser.ParseRawHtml");
+                    throw new HtmlParsingException(ex.Message);
                 }
             }
 

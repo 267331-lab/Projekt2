@@ -80,3 +80,13 @@ public class ValidationException : DashboardException
     {
     }
 }
+
+public class InvalidURLException : DashboardException
+{
+    public InvalidURLException(string message)
+    : base(
+            $"Is not a Fio transparent account url: {message}",
+            $"Neplatný vstup: {message}",
+            null
+        ){}
+}

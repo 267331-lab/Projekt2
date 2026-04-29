@@ -1,6 +1,7 @@
 namespace NGOFinanceDashboard.Forms;
 using NGOFinanceDashboard.Services;
 using NGOFinanceDashboard.Utilities.Exceptions;
+using NGOFinanceDashboard.Utilities;
 using NGOFinanceDashboard.ViewModels;
 
 public partial class MainForm : Form
@@ -46,11 +47,13 @@ public partial class MainForm : Form
     }
     catch (DashboardException ex)
     {
+        ExceptionHandler.HandleException(ex, "MainForm.FetchButton_Click");
         MessageBox.Show(ex.UserFriendlyMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
     }
     catch (Exception ex)
     {
-        MessageBox.Show("Neznámá chyba. Zkus to znovu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        ExceptionHandler.HandleException(ex, "MainForm.FetchButton_Click");
+        MessageBox.Show("Unknown error. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
     }
     finally
     {

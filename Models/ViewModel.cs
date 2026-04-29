@@ -3,6 +3,7 @@ namespace NGOFinanceDashboard.ViewModels;
 using NGOFinanceDashboard.Models;
 using NGOFinanceDashboard.Services;
 using NGOFinanceDashboard.Utilities.Exceptions;
+using NGOFinanceDashboard.Utilities;
 public class MainFormViewModel
 {
     private readonly IDataFetcher _dataFetcher;
@@ -21,7 +22,7 @@ public class MainFormViewModel
 
     public async Task FetchAndAnalyzeAsync(string url)
 {
-    try
+   try
     {
         UpdateStatus("Loading data...", Color.Blue);
         _currentTransactions = (await _dataFetcher.FetchTransactionsAsync(url)).ToList();
@@ -30,28 +31,28 @@ public class MainFormViewModel
     }
     catch (ValidationException ex)
     {
+        ExceptionHandler.HandleException(ex, "MainFormViewModel.FetchAndAnalyzeAsync");
         UpdateStatus($"⚠️ {ex.UserFriendlyMessage}", Color.Orange);
-        LogException(ex);
     }
     catch (DataFetchException ex)
     {
+        ExceptionHandler.HandleException(ex, "MainFormViewModel.FetchAndAnalyzeAsync");
         UpdateStatus($"❌ {ex.UserFriendlyMessage}", Color.Red);
-        LogException(ex);
     }
     catch (HtmlParsingException ex)
     {
+        ExceptionHandler.HandleException(ex, "MainFormViewModel.FetchAndAnalyzeAsync");
         UpdateStatus($"❌ {ex.UserFriendlyMessage}", Color.Red);
-        LogException(ex);
     }
     catch (DashboardException ex)
     {
+        ExceptionHandler.HandleException(ex, "MainFormViewModel.FetchAndAnalyzeAsync");
         UpdateStatus($"❌ {ex.UserFriendlyMessage}", Color.Red);
-        LogException(ex);
     }
     catch (Exception ex)
     {
-        UpdateStatus("❌ Neznámá chyba. Kontaktuj support.", Color.Red);
-        LogException(new DataAnalysisException("Unexpected error", ex));
+        ExceptionHandler.HandleException(ex, "MainFormViewModel.FetchAndAnalyzeAsync");
+        UpdateStatus("❌ Unknown error", Color.Red);
     }
 }
 
