@@ -1,14 +1,11 @@
-using NGOFinanceDashboard.Models;
-
 namespace NGOFinanceDashboard.Services;
 
-/// <summary>
-/// Interface for data analysis operations
-/// </summary>
+using NGOFinanceDashboard.Models;
+
 public interface IDataAnalyzer
 {
-    /// <summary>
-    /// Analyzes transactions and generates a finance report
-    /// </summary>
-    FinanceReport Analyze(IEnumerable<Transaction> transactions);
-}
+    decimal CalculateCashFlow(List<Transaction> transactions);
+    Transaction FindBiggestExpense(List<Transaction> transactions);
+    List<(string Contributor, decimal Total)> GetTop3Contributors(List<Transaction> transactions);
+    Dictionary<string, int> GetMostCommonMessages(List<Transaction> transactions);
+}   

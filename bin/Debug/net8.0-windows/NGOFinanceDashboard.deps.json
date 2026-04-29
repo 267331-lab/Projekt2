@@ -1,0 +1,74 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "NGOFinanceDashboard/1.0.0": {
+        "dependencies": {
+          "HtmlAgilityPack": "1.11.56",
+          "Selenium.WebDriver": "4.43.0"
+        },
+        "runtime": {
+          "NGOFinanceDashboard.dll": {}
+        }
+      },
+      "HtmlAgilityPack/1.11.56": {
+        "runtime": {
+          "lib/netstandard2.0/HtmlAgilityPack.dll": {
+            "assemblyVersion": "1.11.56.0",
+            "fileVersion": "1.11.56.0"
+          }
+        }
+      },
+      "Selenium.WebDriver/4.43.0": {
+        "runtime": {
+          "lib/net8.0/WebDriver.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/linux/native/selenium-manager": {
+            "rid": "linux",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx/native/selenium-manager": {
+            "rid": "osx",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win/native/selenium-manager.exe": {
+            "rid": "win",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NGOFinanceDashboard/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HtmlAgilityPack/1.11.56": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qG/6qrLH4jicdFfY1k/EpHHSKZJHI+hZiPSMM2ylr6YdHNlp2SHVIfuKNBdNi0Bqa13e7E9WmLaHGiXDmYqtEQ==",
+      "path": "htmlagilitypack/1.11.56",
+      "hashPath": "htmlagilitypack.1.11.56.nupkg.sha512"
+    },
+    "Selenium.WebDriver/4.43.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gsT0/pFeTUbyeUL9qcf/KLeII802sZrRNeb7YGKKOlFfT50MKxggWQW3Wh9p82IstCcXG91Ya9OLbu3tH/BRoQ==",
+      "path": "selenium.webdriver/4.43.0",
+      "hashPath": "selenium.webdriver.4.43.0.nupkg.sha512"
+    }
+  }
+}

@@ -1,4 +1,6 @@
-using NGOFinanceDashboard.Forms;
+using HtmlAgilityPack;
+using  NGOFinanceDashboard.Services;
+using  NGOFinanceDashboard.Forms;
 
 namespace NGOFinanceDashboard;
 
@@ -10,7 +12,15 @@ static class Program
     [STAThread]
     static void Main()
     {
-        ApplicationConfiguration.Initialize();
-        Application.Run(new MainForm());
-    }    
+        // To customize application configuration such as set high DPI settings or default font,
+        // see https://aka.ms/applicationconfiguration.
+        //ApplicationConfiguration.Initialize();
+        //Application.Run(new MainForm());
+        
+        HttpClient httpClient = new(); 
+        FioHtmlParser TestParser = new();
+        FioDataFetcher TestFetcher = new(httpClient,  TestParser);
+        var response = TestFetcher.FetchTransactionsAsync();
+        Console.WriteLine(response);
+    }
 }

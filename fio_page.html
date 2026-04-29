@@ -1,0 +1,3446 @@
+<html xmlns="https://www.w3.org/1999/xhtml"><head><script type="text/javascript" src="./fio/resource/cz.fio.ib2.common.wicket.web.layout.jquery.JQuery/js/jquery-3.6.0.min-ver-CE8F684A284EDB4E0F59F8333915FFF3.js"></script>
+<link rel="stylesheet" type="text/css" href="./fio/resource/cz.fio.ib2.common.wicket.web.layout.jqueryUI.JQueryUI/jquery-ui-1.13.1.min-ver-3809AB2F81BAF761459F5E66F169A5D7.css" media="screen">
+<script type="text/javascript" src="./fio/resource/cz.fio.ib2.common.wicket.web.layout.jqueryUI.JQueryUI/jquery-ui-1.13.1.min-ver-1174ABB1D3A146BA5ABD4E6FD5F94B41.js"></script>
+<link rel="stylesheet" type="text/css" href="./fio/resource/cz.fio.ib2.common.wicket.web.layout.bootstrap.Bootstrap/css/bootstrap_341.min-ver-4BE1CDB6FF8DBD79BE777AD52F309349.css" media="screen, print">
+<script type="text/javascript" src="./fio/resource/cz.fio.ib2.common.wicket.web.layout.bootstrap.Bootstrap/js/bootstrap_341.min-ver-2F34B630FFE30BA2FF2B91E3F3C322A1.js"></script>
+<link rel="stylesheet" type="text/css" href="./fio/resource/cz.fio.ib2.common.wicket.web.layout.bootstrapSelect.BsSelect/css/bootstrap-select.min-ver-2212BC6B437F27E6F6AC3FE2D30BF349.css" media="screen, print">
+<script type="text/javascript" src="./fio/resource/cz.fio.ib2.common.wicket.web.layout.bootstrapSelect.BsSelect/js/bootstrap-select.min-ver-F20D3F02E2FBAD79845F3AB4C458AA20.js"></script>
+<script type="text/javascript" src="./fio/resource/org.apache.wicket.ajax.AbstractDefaultAjaxBehavior/res/js/wicket-ajax-jquery-ver-8CD946166F47E5DD4EADD165939FF57D.js"></script>
+<script type="text/javascript" src="./fio/resource/cz.fio.ib2.web.component.datePicker.DatePicker/DatePicker_cs-ver-B53E393FD0791540160DFB834FE263AD.js"></script>
+<script type="text/javascript" src="./fio/resource/cz.fio.ib2.web.js.jqueryquicksearch.JQueryQuickSearch/jquery.quicksearch.min-ver-32644867ABC85E264DF411DCA3A60FFF.js"></script>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="icon" sizes="16x16" type="image/x-icon" href="./fio/resource/cz.fio.ib2.common.wicket.web.layout.image.FioImage/png/favicon-ver-BED52CBBA61C3C2EFBCD2A3F722B3146.ico">
+	<title>Internetové bankovnictví | Fio banka</title>
+	
+
+<link rel="stylesheet" type="text/css" href="./fio/resource/cz.fio.ib2.common.wicket.web.layout.fontawesome.FontAwesome/css/font-awesome.min-ver-269550530CC127B6AA5A35925A7DE6CE.css" media="screen">
+<script type="text/javascript" src="./fio/resource/cz.fio.ib2.common.wicket.web.layout.scripts.Scripts/defaultJsFunctions-ver-339D32B737C5D376645BE9AAFB9F2B0E.js"></script>
+<script type="text/javascript" src="./fio/resource/cz.fio.ib2.common.wicket.web.layout.scripts.Scripts/defaultLocalizedJsFunctions-ver-57244FFEF2516F1B0F7E5D0F00C28E1C.js"></script>
+<link rel="stylesheet" type="text/css" href="./fio/resource/cz.fio.ib2.web.layout.BasePage/style-ver-9CA3BF7BD8D7A3A049DA40B084A3F601.css" media="screen">
+<link rel="stylesheet" type="text/css" href="./fio/resource/cz.fio.ib2.web.layout.BasePage/print-ver-98E7EA0529EA6D60F27CD68E8A462E77.css" media="print">
+<meta name="description" content="Přihlášení do internetového bankovnictví Fio banky. Kromě plateb si zde můžete založit i další účty, požádat o půjčku, kontokorent a další služby.">
+<script type="text/javascript">
+/*<![CDATA[*/
+Wicket.Event.add(window, "load", function(event) { 
+$("#idafa0c28f01eb816a1").nextAll("button").first().remove();
+$("#idafa0c28f01eb816a1").nextAll(".dropdown-menu").first().remove();
+$("#idafa0c28f01eb816a1").selectpicker({dropupAuto: false, showSubtext: true});;
+$('#id4ccfd91f619709232').datepicker({minDate: -365,maxDate: 0}); $('#id2e88e1cf0713c8db3').click(function(){$(this).closest('.input-group').children('.form-control').datepicker('show');});;
+$('#id1e3b76e11ece24654').datepicker({minDate: -365,maxDate: 0}); $('#id00e47cf962cb32fc5').click(function(){$(this).closest('.input-group').children('.form-control').datepicker('show');});;
+(function() {
+
+	var oldValFrom = null;
+	var oldValTo = null;
+	
+	function checkRadioRychlaVolba() {
+		if ($("#id2d00825140dd90c36 .radioTYDEN").is(':checked')) {
+			$("#id2d00825140dd90c36 .datepickerFrom").datepicker("setDate", "-7d");
+			$("#id2d00825140dd90c36 .datepickerTo").datepicker("setDate", "0");
+		}
+
+		if ($("#id2d00825140dd90c36 .radioMESIC").is(':checked')) {
+			$("#id2d00825140dd90c36 .datepickerFrom").datepicker("setDate", "-1m");
+			$("#id2d00825140dd90c36 .datepickerTo").datepicker("setDate", "0");
+		}
+
+		if ($("#id2d00825140dd90c36 .radioVLASTNI").is(':checked')) {
+			$("#id2d00825140dd90c36 .datepickerFrom").datepicker('enable');
+			$("#id2d00825140dd90c36 .datepickerTo").datepicker('enable');
+		}
+		
+		oldValFrom = $("#id2d00825140dd90c36 .datepickerFrom").datepicker({ dateFormat: 'yy-mm-dd' }).val();
+		oldValTo = $("#id2d00825140dd90c36 .datepickerTo").datepicker({ dateFormat: 'yy-mm-dd' }).val();
+	}
+	;
+
+	checkRadioRychlaVolba();
+	$("#id2d00825140dd90c36 .radios").change(function() {
+		checkRadioRychlaVolba();
+	});
+
+	$("#id2d00825140dd90c36 .datepickerFrom").on('change keypress paste focus textInput input', function() {
+		var val = ($("#id2d00825140dd90c36 .datepickerFrom").datepicker({dateFormat : 'yy-mm-dd'}).val());
+		if (val !== oldValFrom) {
+			oldValFrom = val;
+			$("#id2d00825140dd90c36 .radioVLASTNI").prop("checked", true);
+		}
+	});
+	
+	$("#id2d00825140dd90c36 .datepickerTo").on('change keypress paste focus textInput input', function() {
+		var val = ($("#id2d00825140dd90c36 .datepickerTo").datepicker({ dateFormat: 'yy-mm-dd' }).val());        
+		if (val != oldValTo) {
+        	oldValFrom = val;
+        	$("#id2d00825140dd90c36 .radioVLASTNI").prop("checked", true);
+        }
+	});
+})();;
+(function() {
+
+	$("#ided4eac720b38e8a57").on("focus", function() {
+		$(this).prev(".input-group-addon").css("border-color", "#66AFE9");
+	});
+
+	$("#ided4eac720b38e8a57").on("focusout", function() {
+		$(this).prev(".input-group-addon").css("border-color", "#CCCCCC");
+	});
+	
+	var qs = $("#ided4eac720b38e8a57").quicksearch('#idb478b3dd549d0d338 tbody tr:not(".sumacniRadek")', {});
+	
+	function showHideRemove(){
+		 if($.trim($("#ided4eac720b38e8a57").val()).length) { // mame text
+			 $("#ided4eac720b38e8a57").parent().find(".deleteText").show();
+	     }
+		 else{
+			 $("#ided4eac720b38e8a57").parent().find(".deleteText").hide();
+		 }
+	}
+	showHideRemove();
+	$("#ided4eac720b38e8a57").on("keyup", function() {
+		showHideRemove();
+    });
+	$("#ided4eac720b38e8a57").parent().find(".deleteText").on("click", function(){
+		$("#ided4eac720b38e8a57").val("");
+		showHideRemove();
+		$("#ided4eac720b38e8a57").trigger("focus");
+		qs.reset();
+    });
+
+	
+	
+})();
+;
+setMinimalContentSize();;
+;});
+/*]]>*/
+</script>
+</head>
+<body>
+	
+	<div class="wrapperPage wrapperPageTrans">
+		<div class="wrapperHeader">
+			<div class="green_border"></div>
+			<div class="container" style="margin-bottom: 20px">
+				<div class="row">
+					<div class="col-md-4 col-xs-6" style="line-height: 50px;">
+						<img class="logo_header img-responsive" src="./fio/resource/cz.fio.ib2.common.wicket.web.layout.image.FioImage/png/logo_fio-ver-894B2A39F77CABA34D70A4AC4C0FE0B6.png">
+					</div>
+					<div class="col-md-8 nav_header">
+						<div>
+	<form class="form-inline pull-right" id="id3f2bd5ff23145a4d9" method="post" action="./transparent?-1.-languageSelector-form&amp;a=2200272480&amp;f=27.04.2025&amp;t=27.04.2026"><div id="id3f2bd5ff23145a4d9_hf_0" hidden="" class="hidden-fields"></div>
+		<div class="form-group languageDropDown">
+			<div class="dropdown bootstrap-select form-control pull-right bs3"><select class="form-control pull-right" name="languageDropDown" id="idafa0c28f01eb816a1" onchange="this.form.submit()">
+<option selected="selected" value="CZECH" data-content="&lt;img src='./fio/resource/cz.fio.ib2.common.wicket.web.layout.image.FioImage/png/VlajkaCzMala-ver-425A2FE80A90297180F0DCC77B3F66B6.png'&gt;&nbsp;Česky&nbsp;" data-tokens="Česky">Česky</option>
+<option value="SLOVAK" data-content="&lt;img src='./fio/resource/cz.fio.ib2.common.wicket.web.layout.image.FioImage/png/VlajkaSkMala-ver-54AA18CD9834A48A7616BB29EA79F102.png'&gt;&nbsp;Slovensky&nbsp;" data-tokens="Slovensky">Slovensky</option>
+<option value="ENGLISH" data-content="&lt;img src='./fio/resource/cz.fio.ib2.common.wicket.web.layout.image.FioImage/png/VlajkaGbMala-ver-E4896565595FC22E344FD619C0ED15BB.png'&gt;&nbsp;English&nbsp;" data-tokens="English">English</option>
+</select><button type="button" tabindex="-1" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" data-id="idafa0c28f01eb816a1" title="Česky"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner"><img src="./fio/resource/cz.fio.ib2.common.wicket.web.layout.image.FioImage/png/VlajkaCzMala-ver-425A2FE80A90297180F0DCC77B3F66B6.png">&nbsp;Česky&nbsp;</div></div> </div><span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open"><div class="inner open" role="listbox" id="bs-select-1" tabindex="-1"><ul class="dropdown-menu inner " role="presentation"></ul></div></div></div>
+		</div>
+	</form>
+</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container wrapperBody" style="padding-bottom: 69px">
+			<div class="row">
+				<div class="col-lg-12 content">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="page-header">
+								<h1 style="display: block; text-align: center;">
+									Pohyby na transparentním účtu
+								</h1>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							
+								<div>
+									<strong>Číslo účtu:</strong>
+									
+    2200272480 / 2010
+    
+
+								</div>
+							
+							<div>
+								<strong>Majitel účtu:</strong>
+								Přátelé New Renato, z.s.
+							</div>
+							<div>
+								<strong>Název účtu:</strong>
+								Přátelé New Renato Community Society
+							</div>
+							
+						</div>
+						<div class="col-md-6 hidden-print">
+							<div>
+		<div class="input-group">
+			<span class="input-group-addon inputAddonPre">
+				<i class="fa fa-search"></i>
+				<i class="fa fa-times deleteText" style="display: none;"></i>
+			</span> 
+			<input style="border-left: medium none;" type="text" autocomplete="off" class="form-control searchInput" id="ided4eac720b38e8a57" placeholder="Co hledáte?">
+		</div>
+	</div>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-md-9 pohybySum">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Stav k: <span>29.04.2025</span></th>
+										<th>Stav k: <span>27.04.2026</span></th>
+										<th>Suma příjmů</th>
+										<th>Suma výdajů</th>
+										<th>Suma celkem</th>
+										<th>Běžný zůstatek</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+		230&nbsp;437,00&nbsp;CZK
+	</td>
+										<td>
+		48&nbsp;713,51&nbsp;CZK
+	</td>
+										<td>
+		88&nbsp;737,44&nbsp;CZK
+	</td>
+										<td class="negative">
+		-270&nbsp;460,93&nbsp;CZK
+	</td>
+										<td class="negative">
+		-181&nbsp;723,49&nbsp;CZK
+	</td>
+										<td>
+		48&nbsp;713,51&nbsp;CZK
+	</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-md-3">
+							<div class="row">
+								<div style="position: relative; top: -8px;" class="col-md-12">
+									<a class="pull-right btn btn-transparent hidden-print" href="#" onclick="window.print();"><i class="fa fa-print fa-lg"></i>
+									</a>
+								</div>
+							</div>
+							<div class="row">
+								<div style="position: relative; top: -6px;" class="col-md-12 hidden-print">
+									<div class="btn-group dropdownCloseBox pull-right">
+										<button class="btn btn-default dropdownCloseBtn" type="button">
+											<span>29.04.2025</span>&nbsp;-&nbsp;<span>27.04.2026</span>
+											<div class="caret"></div>
+										</button>
+										<div class="dropdown-menu pohybySelectDate dropdownClose">
+											<form class="form-inline" id="id2d00825140dd90c36" method="post" action="./transparent?-1.-dateForm&amp;a=2200272480&amp;f=27.04.2025&amp;t=27.04.2026"><div id="id2d00825140dd90c36_hf_0" hidden="" class="hidden-fields"></div>
+												<div class="row">
+													<div class="col-md-12 text-center">
+														<div class="radio">
+															<label><input type="radio" name="rychlaVolba" class="radios radioMESIC"> <span>poslední měsíc</span></label>
+														</div>
+														<div class="radio">
+															<label><input type="radio" name="rychlaVolba" class="radios radioTYDEN"> <span>poslední týden</span></label>
+														</div>
+														<div class="radio">
+															<label><input type="radio" name="rychlaVolba" checked="checked" class="radios radioVLASTNI"> <span>vlastní</span></label>
+														</div>
+
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-12">
+														<div style="background: none repeat scroll 0% 0% rgb(255, 255, 255); padding: 10px;">
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label for="id4ccfd91f619709232">Od</label>
+																		<div class="input-group">
+		<input type="text" class="form-control input-sm datepicker datepickerFrom hasDatepicker" value="29.04.2025" name="datumOd:inputField" id="id4ccfd91f619709232">
+		<span class="input-group-addon" style="cursor: pointer" id="id2e88e1cf0713c8db3"> <i class="fa fa-calendar"></i>
+		</span>
+	</div>
+																	</div>
+																</div>
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label for="id1e3b76e11ece24654">Do</label>
+																		<div class="input-group">
+		<input type="text" class="form-control input-sm datepicker datepickerTo hasDatepicker" value="27.04.2026" name="datumDo:inputField" id="id1e3b76e11ece24654">
+		<span class="input-group-addon" style="cursor: pointer" id="id00e47cf962cb32fc5"> <i class="fa fa-calendar"></i>
+		</span>
+	</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<hr>
+												<div class="row">
+													<div class="col-md-12">
+														<button type="submit" class="btn greenBtn btn-sm pull-left">
+															Zobrazit
+														</button>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					
+					
+					<table class="table" id="idb478b3dd549d0d338">
+		<thead>
+			<tr>
+		
+			<th>Datum</th>
+		
+			<th class="text-right">Částka</th>
+		
+			<th>Typ</th>
+		
+			<th>Název protiúčtu</th>
+		
+			<th>Zpráva pro příjemce</th>
+		
+			<th>KS</th>
+		
+			<th>VS</th>
+		
+			<th>SS</th>
+		
+			<th>Poznámka</th>
+		
+	</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+		
+			<td>26.04.2026</td>
+		
+			<td class="text-right amount amount_value" data-value="350.0000">
+		350,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>Marie Divilová</td>
+		
+			<td>
+		
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>Marie Divilová</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>23.04.2026</td>
+		
+			<td class="text-right amount amount_value" data-value="200.0000">
+		200,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>KLÁRA MAJEROVÁ</td>
+		
+			<td>
+		<div>členský příspěvek</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>KLÁRA MAJEROVÁ</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>20.04.2026</td>
+		
+			<td class="text-right amount amount_value" data-value="100.0000">
+		100,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní příjem</td>
+		
+			<td>Dominik Thomas</td>
+		
+			<td>
+		<div>Srdečně zdraví a mnoho Božího požehnání přejí Thomasovi. Prosíme o roční potvrzení o daru: Dominik Thomas, U Měšické tvrze 461, Tábor, 39156</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>Dominik Thomas</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>16.04.2026</td>
+		
+			<td class="text-right amount amount_value" data-value="250.0000">
+		250,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>MARKÉTA VAŘEJKOVÁ</td>
+		
+			<td>
+		
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>2604090001</td>
+		
+			<td></td>
+		
+			<td>MARKÉTA VAŘEJKOVÁ</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>16.04.2026</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-2575.0000">
+		-2&nbsp;575,00&nbsp;CZK
+	</td>
+		
+			<td>Platba převodem uvnitř banky</td>
+		
+			<td></td>
+		
+			<td>
+		<div>pronájem prostor - akce pro veřejnost</div>
+		
+		
+		
+		
+	</td>
+		
+			<td>0008</td>
+		
+			<td>102512026</td>
+		
+			<td></td>
+		
+			<td>pronájem prostor - akce pro veřejnost</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>14.04.2026</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-550.0000">
+		-550,00&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: www.cd.cz/eshop/, Praha 1, CZ, dne 13.4.2026, částka  550.00 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Nákup: www.cd.cz/eshop/, Praha 1, CZ, dne 13.4.2026, částka  550.00 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>13.04.2026</td>
+		
+			<td class="text-right amount amount_value" data-value="200.0000">
+		200,00&nbsp;CZK
+	</td>
+		
+			<td>Platba převodem uvnitř banky</td>
+		
+			<td>Höferová, Marta</td>
+		
+			<td>
+		<div>členský poplatek 2026</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>členský poplatek 2026</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>09.04.2026</td>
+		
+			<td class="text-right amount amount_value" data-value="50000.0000">
+		50&nbsp;000,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní příjem</td>
+		
+			<td>TOYOTA TSUSHO EUROPE</td>
+		
+			<td>
+		<div>1P0000262947</div>
+		
+		
+		
+		
+	</td>
+		
+			<td>0000</td>
+		
+			<td>1</td>
+		
+			<td>0</td>
+		
+			<td>TOYOTA TSUSHO EUROPE</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>01.04.2026</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-7000.0000">
+		-7&nbsp;000,00&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Výběr z bankomatu: FIO BANKA, SENOVÁŽNÉ NÁMĚSTÍ 995/1, PRAHA  1, 110 00, CZ, dne 1.4.2026, částka  7000.00 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Výběr z bankomatu: FIO BANKA, SENOVÁŽNÉ NÁMĚSTÍ 995/1, PRAHA  1, 110 00, CZ, dne 1.4.2026, částka  7000.00 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>31.03.2026</td>
+		
+			<td class="text-right amount amount_value" data-value="250.0000">
+		250,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>Almeida Adérito Cláu</td>
+		
+			<td>
+		<div>Meď - Ade (Adérito Almeida)</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>Almeida Adérito Cláu</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>28.03.2026</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-6753.3300">
+		-6&nbsp;753,33&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: KAUFLAND CZ  3710, BENESOV, CZ, dne 27.3.2026, částka  6753.33 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Nákup: KAUFLAND CZ  3710, BENESOV, CZ, dne 27.3.2026, částka  6753.33 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>28.03.2026</td>
+		
+			<td class="text-right amount amount_value" data-value="500.0000">
+		500,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>Ema Valková</td>
+		
+			<td>
+		
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>2603280001</td>
+		
+			<td></td>
+		
+			<td>Ema Valková</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>23.03.2026</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-11100.0000">
+		-11&nbsp;100,00&nbsp;CZK
+	</td>
+		
+			<td>Platba převodem uvnitř banky</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Potisk triček</div>
+		
+		
+		
+		
+	</td>
+		
+			<td>0308</td>
+		
+			<td>20260016</td>
+		
+			<td></td>
+		
+			<td>trička projekt</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>18.03.2026</td>
+		
+			<td class="text-right amount amount_value" data-value="100.0000">
+		100,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní příjem</td>
+		
+			<td>Dominik Thomas</td>
+		
+			<td>
+		<div>Srdečně zdraví a mnoho Božího požehnání přejí Thomasovi. Prosíme o roční potvrzení o daru: Dominik Thomas, U Měšické tvrze 461, Tábor, 39156</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>Dominik Thomas</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>12.03.2026</td>
+		
+			<td class="text-right amount amount_value" data-value="350.0000">
+		350,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní příjem</td>
+		
+			<td>SOUKUP JIRI</td>
+		
+			<td>
+		<div>beneficni prodej adventni stanek</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>2412</td>
+		
+			<td></td>
+		
+			<td>SOUKUP JIRI</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>11.03.2026</td>
+		
+			<td class="text-right amount amount_value" data-value="200.0000">
+		200,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>David Hampl</td>
+		
+			<td>
+		<div>beneficni prodej adventni stanek</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>2412</td>
+		
+			<td></td>
+		
+			<td>David Hampl</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>11.03.2026</td>
+		
+			<td class="text-right amount amount_value" data-value="200.0000">
+		200,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>Ing.Valenta Filip,MB</td>
+		
+			<td>
+		<div>beneficni prodej adventni stanek</div>
+		
+		
+		
+		
+	</td>
+		
+			<td>0000</td>
+		
+			<td>2412</td>
+		
+			<td></td>
+		
+			<td>Ing.Valenta Filip,MB</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>10.03.2026</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-135.0000">
+		-135,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá odchozí platba</td>
+		
+			<td></td>
+		
+			<td>
+		<div>tisk</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>tisk letáčky</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>02.03.2026</td>
+		
+			<td class="text-right amount amount_value" data-value="6782.4400">
+		6&nbsp;782,44&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní příjem</td>
+		
+			<td>THE UK ONLINE GIVING</td>
+		
+			<td>
+		<div>Donation from UKOGF causes.benevity.org - 1SDPCFMVRN, 1SDPCFMVRN</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>THE UK ONLINE GIVING</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>18.02.2026</td>
+		
+			<td class="text-right amount amount_value" data-value="100.0000">
+		100,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní příjem</td>
+		
+			<td>Dominik Thomas</td>
+		
+			<td>
+		<div>Srdečně zdraví a mnoho Božího požehnání přejí Thomasovi. Prosíme o roční potvrzení o daru: Dominik Thomas, U Měšické tvrze 461, Tábor, 39156</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>Dominik Thomas</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>11.02.2026</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-80.0000">
+		-80,00&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: Ceska posta  12800, Praha, CZ, dne 10.2.2026, částka  80.00 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Nákup: Ceska posta  12800, Praha, CZ, dne 10.2.2026, částka  80.00 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>31.01.2026</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-1800.0000">
+		-1&nbsp;800,00&nbsp;CZK
+	</td>
+		
+			<td>Platba převodem uvnitř banky</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Přátelé New Renato, z.s. - Servisní podpora Skeleton</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>420260432</td>
+		
+			<td></td>
+		
+			<td>eso skeleton</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>19.01.2026</td>
+		
+			<td class="text-right amount amount_value" data-value="100.0000">
+		100,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní příjem</td>
+		
+			<td>Dominik Thomas</td>
+		
+			<td>
+		<div>Srdečně zdraví a mnoho Božího požehnání přejí Thomasovi. Prosíme o roční potvrzení o daru: Dominik Thomas, U Měšické tvrze 461, Tábor, 39156</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>Dominik Thomas</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>17.01.2026</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-2904.0000">
+		-2&nbsp;904,00&nbsp;CZK
+	</td>
+		
+			<td>Platba převodem uvnitř banky</td>
+		
+			<td></td>
+		
+			<td>
+		<div>PRATELENEWRENATO Hromadné rozesílání e-mailů PROFI</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>32600533</td>
+		
+			<td></td>
+		
+			<td>ecomail hromadné rozesílání e-mailů PROFI</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>11.01.2026</td>
+		
+			<td class="text-right amount amount_value" data-value="2865.0000">
+		2&nbsp;865,00&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Kredit: Alza.cz, Prague, CZ, dne 11.11.2025, částka  2865.00 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Kredit: Alza.cz, Prague, CZ, dne 11.11.2025, částka  2865.00 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>06.01.2026</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-366.0000">
+		-366,00&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: Ceska posta  11000, Praha, CZ, dne 5.1.2026, částka  366.00 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Nákup: Ceska posta  11000, Praha, CZ, dne 5.1.2026, částka  366.00 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>04.01.2026</td>
+		
+			<td class="text-right amount amount_value" data-value="150.0000">
+		150,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>BARBORA BAJGAROVÁ</td>
+		
+			<td>
+		
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>BARBORA BAJGAROVÁ</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>31.12.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-25345.0000">
+		-25&nbsp;345,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá odchozí platba</td>
+		
+			<td></td>
+		
+			<td>
+		<div>letenky dobrovolník</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>letenky dobrovolník</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>30.12.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="10000.0000">
+		10&nbsp;000,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>Ing. Mgr. Jan Blažek</td>
+		
+			<td>
+		
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>Ing. Mgr. Jan Blažek</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>18.12.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="100.0000">
+		100,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní příjem</td>
+		
+			<td>Dominik Thomas</td>
+		
+			<td>
+		<div>Srdečně zdraví a mnoho Božího požehnání přejí Thomasovi. Prosíme o roční potvrzení o daru: Dominik Thomas, U Měšické tvrze 461, Tábor, 39156</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>Dominik Thomas</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>14.12.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="340.0000">
+		340,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>Petříčková Iva</td>
+		
+			<td>
+		<div>beneficni prodej adventni stanek</div>
+		
+		
+		
+		
+	</td>
+		
+			<td>0000</td>
+		
+			<td>2412</td>
+		
+			<td></td>
+		
+			<td>Petříčková Iva</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>14.12.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="130.0000">
+		130,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>Dytrychová Eva</td>
+		
+			<td>
+		<div>beneficni prodej adventni stanek</div>
+		
+		
+		
+		
+	</td>
+		
+			<td>0000</td>
+		
+			<td>2412</td>
+		
+			<td></td>
+		
+			<td>Dytrychová Eva</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>14.12.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="400.0000">
+		400,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>TOMÁŠ HAMPL</td>
+		
+			<td>
+		<div>beneficni prodej adventni stanek</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>2412</td>
+		
+			<td></td>
+		
+			<td>TOMÁŠ HAMPL</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>13.12.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-10890.0000">
+		-10&nbsp;890,00&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: L-A-B-A.CZ, PRAHA 8, CZ, dne 12.12.2025, částka  10890.00 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Nákup: L-A-B-A.CZ, PRAHA 8, CZ, dne 12.12.2025, částka  10890.00 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>08.12.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-13000.0000">
+		-13&nbsp;000,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá odchozí platba</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Facilitace víkendového setkání</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>20250003</td>
+		
+			<td></td>
+		
+			<td>Facilitace víkendového setkání - plánování</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>08.12.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="6000.0000">
+		6&nbsp;000,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní příjem</td>
+		
+			<td>Univerzita Hr.Kr.</td>
+		
+			<td>
+		
+		
+		
+		
+		
+	</td>
+		
+			<td>0308</td>
+		
+			<td>3</td>
+		
+			<td></td>
+		
+			<td>Univerzita Hr.Kr.</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>08.12.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="100.0000">
+		100,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní příjem</td>
+		
+			<td>KOVAC JURAJ</td>
+		
+			<td>
+		<div>beneficni prodej adventni stanek</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>2412</td>
+		
+			<td></td>
+		
+			<td>KOVAC JURAJ</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>07.12.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="220.0000">
+		220,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>Ing.Čupová Terézia</td>
+		
+			<td>
+		<div>beneficni prodej adventni stanek</div>
+		
+		
+		
+		
+	</td>
+		
+			<td>0000</td>
+		
+			<td>2412</td>
+		
+			<td></td>
+		
+			<td>Ing.Čupová Terézia</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>07.12.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="600.0000">
+		600,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>Maroš Rábik</td>
+		
+			<td>
+		<div>beneficni prodej adventni stanek</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>2412</td>
+		
+			<td></td>
+		
+			<td>Maroš Rábik</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>07.12.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="200.0000">
+		200,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>ORÉMUS ÁDÁM</td>
+		
+			<td>
+		<div>beneficni prodej adventni stanek</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>2412</td>
+		
+			<td></td>
+		
+			<td>ORÉMUS ÁDÁM</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>01.12.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="800.0000">
+		800,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní příjem</td>
+		
+			<td>Jiří Zajac</td>
+		
+			<td>
+		<div>beneficni prodej adventni stanek</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>2412</td>
+		
+			<td></td>
+		
+			<td>Jiří Zajac</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>30.11.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="600.0000">
+		600,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>Josef Zeman</td>
+		
+			<td>
+		<div>beneficni prodej adventni stanek</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>2412</td>
+		
+			<td></td>
+		
+			<td>Josef Zeman</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>22.11.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-1500.0000">
+		-1&nbsp;500,00&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: CS KRASNA HORA,  KRASNA HORA N VLT 38, KRASNA HORA, 262 56, CZE, dne 21.11.2025, částka  1500.00 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>5638</td>
+		
+			<td></td>
+		
+			<td>Nákup: CS KRASNA HORA,  KRASNA HORA N VLT 38, KRASNA HORA, 262 56, CZE, dne 21.11.2025, částka  1500.00 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>18.11.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="100.0000">
+		100,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní příjem</td>
+		
+			<td>Dominik Thomas</td>
+		
+			<td>
+		<div>Srdečně zdraví a mnoho Božího požehnání přejí Thomasovi. Prosíme o roční potvrzení o daru: Dominik Thomas, U Měšické tvrze 461, Tábor, 39156</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>Dominik Thomas</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>16.11.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-18675.3900">
+		-18&nbsp;675,39&nbsp;CZK
+	</td>
+		
+			<td>Platba cizoměnová či zahraniční</td>
+		
+			<td></td>
+		
+			<td>
+		
+		<div>Sofiia Maksymova</div>
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>školení dobrovolník</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>12.11.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-2990.0000">
+		-2&nbsp;990,00&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: Alza.cz, Prague, CZ, dne 11.11.2025, částka  2990.00 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Nákup: Alza.cz, Prague, CZ, dne 11.11.2025, částka  2990.00 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>10.11.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-1500.0000">
+		-1&nbsp;500,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá odchozí platba</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Přátelé New Renato online kurz, Jak na veřejné sbírky</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>2501000995</td>
+		
+			<td></td>
+		
+			<td>Přátelé New Renato online kurz, Jak na veřejné sbírky</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>04.11.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-199.0000">
+		-199,00&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: GOPAY  *CEDCR.CZ, PRAHA 10, CZ, dne 3.11.2025, částka  199.00 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Nákup: GOPAY  *CEDCR.CZ, PRAHA 10, CZ, dne 3.11.2025, částka  199.00 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>04.11.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-100.0000">
+		-100,00&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: MESTO RICANY, RICANY, CZ, dne 3.11.2025, částka  100.00 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Nákup: MESTO RICANY, RICANY, CZ, dne 3.11.2025, částka  100.00 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>03.11.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-801.6000">
+		-801,60&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: McPen 037, PRAHA 1, CZ, dne 1.11.2025, částka  801.60 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Nákup: McPen 037, PRAHA 1, CZ, dne 1.11.2025, částka  801.60 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>29.10.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-13231.0000">
+		-13&nbsp;231,00&nbsp;CZK
+	</td>
+		
+			<td>Platba převodem uvnitř banky</td>
+		
+			<td></td>
+		
+			<td>
+		<div>tisk capa desky; výstava 2025</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>403625</td>
+		
+			<td></td>
+		
+			<td>výstava 2025</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>21.10.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-2662.0000">
+		-2&nbsp;662,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní platba</td>
+		
+			<td></td>
+		
+			<td>
+		<div>půjčení dodávky - doprava cihlovačky na UHK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>doprava cihlovačky - půjčení dodávky</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>21.10.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-997.0000">
+		-997,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní platba</td>
+		
+			<td></td>
+		
+			<td>
+		
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>popruhy</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>21.10.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-448.0000">
+		-448,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní platba</td>
+		
+			<td></td>
+		
+			<td>
+		
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>21.10.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-390.6800">
+		-390,68&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá odchozí platba</td>
+		
+			<td></td>
+		
+			<td>
+		<div>čaje - stánek</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>zambijské čaje - benefiční prodej</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>21.10.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="100.0000">
+		100,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní příjem</td>
+		
+			<td>Dominik Thomas</td>
+		
+			<td>
+		<div>Srdečně zdraví a mnoho Božího požehnání přejí Thomasovi. Prosíme o roční potvrzení o daru: Dominik Thomas, U Měšické tvrze 461, Tábor, 39156</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>Dominik Thomas</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>21.10.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-10000.0000">
+		-10&nbsp;000,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní platba</td>
+		
+			<td></td>
+		
+			<td>
+		<div>ubytování</div>
+		
+		
+		
+		
+	</td>
+		
+			<td>0308</td>
+		
+			<td>2025</td>
+		
+			<td></td>
+		
+			<td>školení dobrovolníků</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>21.10.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-8505.0000">
+		-8&nbsp;505,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní platba</td>
+		
+			<td></td>
+		
+			<td>
+		<div>grafika</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>202509033</td>
+		
+			<td></td>
+		
+			<td>grafické práce</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>20.10.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-1502.0000">
+		-1&nbsp;502,00&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: CARGAS CZ,  Moravska Chrastova 10, Brnenec, 56904, CZE, dne 19.10.2025, částka  1502.00 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>5638</td>
+		
+			<td></td>
+		
+			<td>Nákup: CARGAS CZ,  Moravska Chrastova 10, Brnenec, 56904, CZE, dne 19.10.2025, částka  1502.00 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>19.10.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-1500.1000">
+		-1&nbsp;500,10&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: DAVO OIL  S R O,  OLBRAMOVICE 203, VOTICE, 259 01, CZE, dne 17.10.2025, částka  1500.10 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>5638</td>
+		
+			<td></td>
+		
+			<td>Nákup: DAVO OIL  S R O,  OLBRAMOVICE 203, VOTICE, 259 01, CZE, dne 17.10.2025, částka  1500.10 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>11.10.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-5784.4700">
+		-5&nbsp;784,47&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: GLOBUS VAM DEKUJE, PRAHA 9, CZ, dne 10.10.2025, částka  5784.47 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Nákup: GLOBUS VAM DEKUJE, PRAHA 9, CZ, dne 10.10.2025, částka  5784.47 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>06.10.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="440.0000">
+		440,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>MUDR. NATAŠA BARTO</td>
+		
+			<td>
+		<div>betlemska kaple</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>6102025</td>
+		
+			<td></td>
+		
+			<td>MUDR. NATAŠA BARTO</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>06.10.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="80.0000">
+		80,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>MgA.Havlík Ondřej</td>
+		
+			<td>
+		<div>betlemska kaple</div>
+		
+		
+		
+		
+	</td>
+		
+			<td>0000</td>
+		
+			<td>6102025</td>
+		
+			<td></td>
+		
+			<td>MgA.Havlík Ondřej</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>06.10.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="570.0000">
+		570,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>Melčáková Štěpánka</td>
+		
+			<td>
+		<div>betlemska kaple</div>
+		
+		
+		
+		
+	</td>
+		
+			<td>0000</td>
+		
+			<td>6102025</td>
+		
+			<td></td>
+		
+			<td>Melčáková Štěpánka</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>04.10.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="340.0000">
+		340,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>Zuzana Chalupská</td>
+		
+			<td>
+		<div>2x káva Marika</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>Zuzana Chalupská</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>30.09.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="100.0000">
+		100,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>TOBIÁŠ KŘÍŽ</td>
+		
+			<td>
+		<div>lzice priborova</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>30092025</td>
+		
+			<td></td>
+		
+			<td>TOBIÁŠ KŘÍŽ</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>30.09.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="150.0000">
+		150,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>ANNA DOMINIKA MIČKOV</td>
+		
+			<td>
+		<div>varecka mala</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>30092025</td>
+		
+			<td></td>
+		
+			<td>ANNA DOMINIKA MIČKOV</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>30.09.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="50.0000">
+		50,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>Hejná Adéla</td>
+		
+			<td>
+		<div>rybicka</div>
+		
+		
+		
+		
+	</td>
+		
+			<td>0000</td>
+		
+			<td>30092025</td>
+		
+			<td></td>
+		
+			<td>Hejná Adéla</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>25.09.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-497.0000">
+		-497,00&nbsp;CZK
+	</td>
+		
+			<td>Platba převodem uvnitř banky</td>
+		
+			<td></td>
+		
+			<td>
+		<div>tisk Přátelé New Renato, z.s.</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>352425</td>
+		
+			<td></td>
+		
+			<td>tisk letáčky sbírka</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>23.09.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-205.0000">
+		-205,00&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: Ceska posta  11000, Praha, CZ, dne 22.9.2025, částka  205.00 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Nákup: Ceska posta  11000, Praha, CZ, dne 22.9.2025, částka  205.00 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>18.09.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="100.0000">
+		100,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní příjem</td>
+		
+			<td>Dominik Thomas</td>
+		
+			<td>
+		<div>Srdečně zdraví a mnoho Božího požehnání přejí Thomasovi. Prosíme o roční potvrzení o daru: Dominik Thomas, U Měšické tvrze 461, Tábor, 39156</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>Dominik Thomas</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>02.09.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-1560.0000">
+		-1&nbsp;560,00&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: KODAK EXPRESS HRADCANY, PRAHA, CZ, dne 1.9.2025, částka  1560.00 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Nákup: KODAK EXPRESS HRADCANY, PRAHA, CZ, dne 1.9.2025, částka  1560.00 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>01.09.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="340.0000">
+		340,00&nbsp;CZK
+	</td>
+		
+			<td>Platba převodem uvnitř banky</td>
+		
+			<td>Starzewski, Viktor</td>
+		
+			<td>
+		
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>30.08.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="600.0000">
+		600,00&nbsp;CZK
+	</td>
+		
+			<td>Platba převodem uvnitř banky</td>
+		
+			<td>MDDr. Lesáková, Martina</td>
+		
+			<td>
+		<div>ECAS na villa vallila slon krokodyl a gumička</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>ECAS na villa vallila slon krokodyl a gumička</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>30.08.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="200.0000">
+		200,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>PETRA SOUKUPOVÁ</td>
+		
+			<td>
+		<div>ECAS</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>PETRA SOUKUPOVÁ</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>30.08.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="1100.0000">
+		1&nbsp;100,00&nbsp;CZK
+	</td>
+		
+			<td>Platba převodem uvnitř banky</td>
+		
+			<td>Šustrová, Judita</td>
+		
+			<td>
+		<div>ECAS</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>ECAS</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>21.08.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-3000.0500">
+		-3&nbsp;000,05&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: OPUS CLIP, OPUS.PRO, US, dne 20.8.2025, částka  138.02 USD</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Nákup: OPUS CLIP, OPUS.PRO, US, dne 20.8.2025, částka  138.02 USD</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>20.08.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-821.5900">
+		-821,59&nbsp;CZK
+	</td>
+		
+			<td>Platba převodem uvnitř banky</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Přátelé New Renato eco mail</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>22540676</td>
+		
+			<td></td>
+		
+			<td>ecomail</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>18.08.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="100.0000">
+		100,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní příjem</td>
+		
+			<td>Dominik Thomas</td>
+		
+			<td>
+		<div>Srdečně zdraví a mnoho Božího požehnání přejí Thomasovi. Prosíme o roční potvrzení o daru: Dominik Thomas, U Měšické tvrze 461, Tábor, 39156</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>Dominik Thomas</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>23.07.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-1071.5800">
+		-1&nbsp;071,58&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: FACEBK *JNPQZT4852, fb.me/ads, IE, dne 22.7.2025, částka  1071.58 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Nákup: FACEBK *JNPQZT4852, fb.me/ads, IE, dne 22.7.2025, částka  1071.58 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>20.07.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="300.0000">
+		300,00&nbsp;CZK
+	</td>
+		
+			<td>Platba převodem uvnitř banky</td>
+		
+			<td>Höferová, Marta</td>
+		
+			<td>
+		<div>za prodaný stůl :-)</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>za prodaný stůl :-)</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>18.07.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="100.0000">
+		100,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní příjem</td>
+		
+			<td>Dominik Thomas</td>
+		
+			<td>
+		<div>Srdečně zdraví a mnoho Božího požehnání přejí Thomasovi. Prosíme o roční potvrzení o daru: Dominik Thomas, U Měšické tvrze 461, Tábor, 39156</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>Dominik Thomas</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>06.07.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-1098.6800">
+		-1&nbsp;098,68&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: FACEBK *HBGGVRY752, fb.me/ads, IE, dne 5.7.2025, částka  1098.68 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Nákup: FACEBK *HBGGVRY752, fb.me/ads, IE, dne 5.7.2025, částka  1098.68 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>01.07.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-5206.9500">
+		-5&nbsp;206,95&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá odchozí platba</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Grafické práce v rámci projektu GearUp</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>202506025</td>
+		
+			<td></td>
+		
+			<td>Grafické práce v rámci projektu GearUp!,</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>29.06.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-998.2500">
+		-998,25&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: FACEBK *KZGYTRU752, fb.me/ads, IE, dne 28.6.2025, částka  998.25 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Nákup: FACEBK *KZGYTRU752, fb.me/ads, IE, dne 28.6.2025, částka  998.25 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>26.06.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="80.0000">
+		80,00&nbsp;CZK
+	</td>
+		
+			<td>Platba převodem uvnitř banky</td>
+		
+			<td>Bc. Ambrožová, Lucie</td>
+		
+			<td>
+		<div>ECAS</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>ECAS</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>26.06.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="550.0000">
+		550,00&nbsp;CZK
+	</td>
+		
+			<td>Platba převodem uvnitř banky</td>
+		
+			<td>Bc. Ambrožová, Lucie</td>
+		
+			<td>
+		<div>ECAS</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>ECAS</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>22.06.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-355.5600">
+		-355,56&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: FACEBK *7FELDRG852, fb.me/ads, IE, dne 22.6.2025, částka  355.56 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Nákup: FACEBK *7FELDRG852, fb.me/ads, IE, dne 22.6.2025, částka  355.56 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>21.06.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-998.2500">
+		-998,25&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: FACEBK *X8HLPSC852, fb.me/ads, IE, dne 20.6.2025, částka  998.25 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>8274</td>
+		
+			<td></td>
+		
+			<td>Nákup: FACEBK *X8HLPSC852, fb.me/ads, IE, dne 20.6.2025, částka  998.25 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>18.06.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="100.0000">
+		100,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní příjem</td>
+		
+			<td>Dominik Thomas</td>
+		
+			<td>
+		<div>Srdečně zdraví a mnoho Božího požehnání přejí Thomasovi. Prosíme o roční potvrzení o daru: Dominik Thomas, U Měšické tvrze 461, Tábor, 39156</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>Dominik Thomas</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>16.06.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-30000.0000">
+		-30&nbsp;000,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá odchozí platba</td>
+		
+			<td></td>
+		
+			<td>
+		<div>marketingové práce</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>marketingové práce Eliška Kopačková</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>16.06.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-10000.0000">
+		-10&nbsp;000,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní platba</td>
+		
+			<td></td>
+		
+			<td>
+		
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>0825</td>
+		
+			<td></td>
+		
+			<td>ubytování víkend pro dobrovolníky</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>16.06.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-4231.4500">
+		-4&nbsp;231,45&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní platba</td>
+		
+			<td></td>
+		
+			<td>
+		
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>doprava víkend pro dobrovolníky</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>16.06.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-25000.0000">
+		-25&nbsp;000,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní platba</td>
+		
+			<td></td>
+		
+			<td>
+		
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>20250502</td>
+		
+			<td></td>
+		
+			<td>Příprava projektové dokumentace v rámci projektu FoRS GearUp!</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>16.06.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-258.0000">
+		-258,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní platba</td>
+		
+			<td></td>
+		
+			<td>
+		
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>Sofiia doprava víkend pro dobrovolníky</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>10.06.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="500.0000">
+		500,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>Vlastimil Králík</td>
+		
+			<td>
+		<div>vařečka a med</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>Vlastimil Králík</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>10.06.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="250.0000">
+		250,00&nbsp;CZK
+	</td>
+		
+			<td>Platba převodem uvnitř banky</td>
+		
+			<td>Indrová, Kateřina</td>
+		
+			<td>
+		<div>taška látková</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>taška látková</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>01.06.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-482.0000">
+		-482,00&nbsp;CZK
+	</td>
+		
+			<td>Karetní transakce</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Nákup: Hornbach 663 Praha - R,  Slanska, Praha, 16300, CZE, dne 31.5.2025, částka  482.00 CZK</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>5638</td>
+		
+			<td></td>
+		
+			<td>Nákup: Hornbach 663 Praha - R,  Slanska, Praha, 16300, CZE, dne 31.5.2025, částka  482.00 CZK</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>26.05.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="200.0000">
+		200,00&nbsp;CZK
+	</td>
+		
+			<td>Okamžitá příchozí platba</td>
+		
+			<td>Kateřina Kuklová</td>
+		
+			<td>
+		<div>Katerina Kuklova - clensky prispevek</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>Kateřina Kuklová</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>25.05.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-6392.0000">
+		-6&nbsp;392,00&nbsp;CZK
+	</td>
+		
+			<td>Platba převodem uvnitř banky</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Platba GSU-JLDK-NBVT</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>1567854070</td>
+		
+			<td></td>
+		
+			<td>Platba GSU-JLDK-NBVT</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>19.05.2025</td>
+		
+			<td class="text-right amount amount_value" data-value="100.0000">
+		100,00&nbsp;CZK
+	</td>
+		
+			<td>Bezhotovostní příjem</td>
+		
+			<td>Dominik Thomas</td>
+		
+			<td>
+		<div>Srdečně zdraví a mnoho Božího požehnání přejí Thomasovi. Prosíme o roční potvrzení o daru: Dominik Thomas, U Měšické tvrze 461, Tábor, 39156</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>Dominik Thomas</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>04.05.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-12500.0000">
+		-12&nbsp;500,00&nbsp;CZK
+	</td>
+		
+			<td>Platba převodem uvnitř banky</td>
+		
+			<td></td>
+		
+			<td>
+		<div>facilitace teambuildingu Kashitu School a Přátele New Renato z.s. pro prsci v rozvojovém kontextu (26-27.4.2025) - projekt GearUp!</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td></td>
+		
+			<td>školení dobrovolníků</td>
+		
+	</tr>
+			
+				<tr>
+		
+			<td>04.05.2025</td>
+		
+			<td class="negative text-right amount amount_value" data-value="-12500.0000">
+		-12&nbsp;500,00&nbsp;CZK
+	</td>
+		
+			<td>Platba převodem uvnitř banky</td>
+		
+			<td></td>
+		
+			<td>
+		<div>Facilitace teambuildingu Kashitu School a Přátele New Renato z.s. pro práci v rozvojovém kontextu (26-27.4.2025) - projekt GearUp!</div>
+		
+		
+		
+		
+	</td>
+		
+			<td></td>
+		
+			<td>25042901</td>
+		
+			<td></td>
+		
+			<td>školení dobrovolníků</td>
+		
+	</tr>
+			
+		</tbody>
+		
+	</table>
+					
+
+
+				</div>
+				
+			</div>
+		</div>
+		<div class="wrapperFooter" style="height: 69px;">
+			<div class="green_border" style="margin-top: 25px; margin-bottom: 0px;"></div>
+			<div class="grey_footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6 gfBox"></div>
+						<div class="col-sm-6 text-right gfBox">
+							<span>©</span> <span>2026</span> <span style="margin-right: 10px">Fio banka</span> <span><a target="_blank" href="https://www.fio.cz/spolecnost_dokumenty_ostatni_pravniProhlaseni.php">Právní prohlášení</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

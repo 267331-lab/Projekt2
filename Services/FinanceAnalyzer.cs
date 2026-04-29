@@ -5,7 +5,7 @@ namespace NGOFinanceDashboard.Services;
 /// <summary>
 /// Performs financial calculations and analysis on transaction data
 /// </summary>
-public class FinanceAnalyzer : IDataAnalyzer
+public class FinanceAnalyzer //: IDataAnalyzer
 {
     public FinanceReport Analyze(IEnumerable<Transaction> transactions)
     {
