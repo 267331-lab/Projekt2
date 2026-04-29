@@ -4,5 +4,5 @@ using NGOFinanceDashboard.Models;
 
 public interface IDataFetcher
 {
-    Task<List<Transaction>> FetchTransactionsAsync(string fioAccountUrl);
+    Task<IEnumerable<Transaction>> FetchTransactionsAsync(string fioAccountUrl, CancellationToken cancellationToken);
 }
