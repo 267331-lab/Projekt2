@@ -67,23 +67,21 @@ public class FinanceAnalyzer : IDataAnalyzer
     /// Find most common receiver message patterns
     /// Useful for understanding expense categories
     /// </summary>
-    public Dictionary<string, int> GetMostCommonMessages(List<Transaction> transactions)
-    {
-        int topCount = 1;
-        if (transactions == null || transactions.Count == 0)
-            return new Dictionary<string, int>();
+    public Dictionary<string, int> GetMostCommonMessages(List<Transaction> transactions, int topCount = 1)
+{
+    if (transactions == null || transactions.Count == 0)
+        return new Dictionary<string, int>();
 
-        var messageCounts = transactions
-            .Where(t => !string.IsNullOrWhiteSpace(t.Message))
-            .GroupBy(t => t.Message.Trim())
-            .Select(g => new { Message = g.Key, Count = g.Count() })
-            .OrderByDescending(x => x.Count)
-            .Take(topCount)
-            .ToDictionary(x => x.Message, x => x.Count);
+    var messageCounts = transactions
+        .Where(t => !string.IsNullOrWhiteSpace(t.Message))
+        .GroupBy(t => t.Message.Trim()) //////MAYBE  DIP BREACH
+        .Select(g => new { Message = g.Key, Count = g.Count() })
+        .OrderByDescending(x => x.Count)
+        .Take(topCount)
+        .ToDictionary(x => x.Message, x => x.Count);
 
-        return messageCounts;
-    }
-
+    return messageCounts;
+}
     /// <summary>
     /// Calculate statistics grouped by receiver (expense category)
     /// </summary>

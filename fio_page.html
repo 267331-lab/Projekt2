@@ -24,86 +24,86 @@
 <script type="text/javascript">
 /*<![CDATA[*/
 Wicket.Event.add(window, "load", function(event) { 
-$("#id54a97e0213e779c91").nextAll("button").first().remove();
-$("#id54a97e0213e779c91").nextAll(".dropdown-menu").first().remove();
-$("#id54a97e0213e779c91").selectpicker({dropupAuto: false, showSubtext: true});;
-$('#id9566bb96bc0ea9482').datepicker({minDate: -365,maxDate: 0}); $('#idc9abc966a389a4f83').click(function(){$(this).closest('.input-group').children('.form-control').datepicker('show');});;
-$('#id0bcfe730a0c805c34').datepicker({minDate: -365,maxDate: 0}); $('#id082e9475c7e62dd55').click(function(){$(this).closest('.input-group').children('.form-control').datepicker('show');});;
+$("#idce0d54d56bf306471").nextAll("button").first().remove();
+$("#idce0d54d56bf306471").nextAll(".dropdown-menu").first().remove();
+$("#idce0d54d56bf306471").selectpicker({dropupAuto: false, showSubtext: true});;
+$('#id45a5b0078ad608ea2').datepicker({minDate: -365,maxDate: 0}); $('#id0006f707a3a2cd7c3').click(function(){$(this).closest('.input-group').children('.form-control').datepicker('show');});;
+$('#idf5c75ab2d7726e5b4').datepicker({minDate: -365,maxDate: 0}); $('#idf3bfd1b01eb095f05').click(function(){$(this).closest('.input-group').children('.form-control').datepicker('show');});;
 (function() {
 
 	var oldValFrom = null;
 	var oldValTo = null;
 	
 	function checkRadioRychlaVolba() {
-		if ($("#idef064cb05c19b3f46 .radioTYDEN").is(':checked')) {
-			$("#idef064cb05c19b3f46 .datepickerFrom").datepicker("setDate", "-7d");
-			$("#idef064cb05c19b3f46 .datepickerTo").datepicker("setDate", "0");
+		if ($("#id340bff6820e41c9a6 .radioTYDEN").is(':checked')) {
+			$("#id340bff6820e41c9a6 .datepickerFrom").datepicker("setDate", "-7d");
+			$("#id340bff6820e41c9a6 .datepickerTo").datepicker("setDate", "0");
 		}
 
-		if ($("#idef064cb05c19b3f46 .radioMESIC").is(':checked')) {
-			$("#idef064cb05c19b3f46 .datepickerFrom").datepicker("setDate", "-1m");
-			$("#idef064cb05c19b3f46 .datepickerTo").datepicker("setDate", "0");
+		if ($("#id340bff6820e41c9a6 .radioMESIC").is(':checked')) {
+			$("#id340bff6820e41c9a6 .datepickerFrom").datepicker("setDate", "-1m");
+			$("#id340bff6820e41c9a6 .datepickerTo").datepicker("setDate", "0");
 		}
 
-		if ($("#idef064cb05c19b3f46 .radioVLASTNI").is(':checked')) {
-			$("#idef064cb05c19b3f46 .datepickerFrom").datepicker('enable');
-			$("#idef064cb05c19b3f46 .datepickerTo").datepicker('enable');
+		if ($("#id340bff6820e41c9a6 .radioVLASTNI").is(':checked')) {
+			$("#id340bff6820e41c9a6 .datepickerFrom").datepicker('enable');
+			$("#id340bff6820e41c9a6 .datepickerTo").datepicker('enable');
 		}
 		
-		oldValFrom = $("#idef064cb05c19b3f46 .datepickerFrom").datepicker({ dateFormat: 'yy-mm-dd' }).val();
-		oldValTo = $("#idef064cb05c19b3f46 .datepickerTo").datepicker({ dateFormat: 'yy-mm-dd' }).val();
+		oldValFrom = $("#id340bff6820e41c9a6 .datepickerFrom").datepicker({ dateFormat: 'yy-mm-dd' }).val();
+		oldValTo = $("#id340bff6820e41c9a6 .datepickerTo").datepicker({ dateFormat: 'yy-mm-dd' }).val();
 	}
 	;
 
 	checkRadioRychlaVolba();
-	$("#idef064cb05c19b3f46 .radios").change(function() {
+	$("#id340bff6820e41c9a6 .radios").change(function() {
 		checkRadioRychlaVolba();
 	});
 
-	$("#idef064cb05c19b3f46 .datepickerFrom").on('change keypress paste focus textInput input', function() {
-		var val = ($("#idef064cb05c19b3f46 .datepickerFrom").datepicker({dateFormat : 'yy-mm-dd'}).val());
+	$("#id340bff6820e41c9a6 .datepickerFrom").on('change keypress paste focus textInput input', function() {
+		var val = ($("#id340bff6820e41c9a6 .datepickerFrom").datepicker({dateFormat : 'yy-mm-dd'}).val());
 		if (val !== oldValFrom) {
 			oldValFrom = val;
-			$("#idef064cb05c19b3f46 .radioVLASTNI").prop("checked", true);
+			$("#id340bff6820e41c9a6 .radioVLASTNI").prop("checked", true);
 		}
 	});
 	
-	$("#idef064cb05c19b3f46 .datepickerTo").on('change keypress paste focus textInput input', function() {
-		var val = ($("#idef064cb05c19b3f46 .datepickerTo").datepicker({ dateFormat: 'yy-mm-dd' }).val());        
+	$("#id340bff6820e41c9a6 .datepickerTo").on('change keypress paste focus textInput input', function() {
+		var val = ($("#id340bff6820e41c9a6 .datepickerTo").datepicker({ dateFormat: 'yy-mm-dd' }).val());        
 		if (val != oldValTo) {
         	oldValFrom = val;
-        	$("#idef064cb05c19b3f46 .radioVLASTNI").prop("checked", true);
+        	$("#id340bff6820e41c9a6 .radioVLASTNI").prop("checked", true);
         }
 	});
 })();;
 (function() {
 
-	$("#idca14df814069617c7").on("focus", function() {
+	$("#id9a675aac470ddc697").on("focus", function() {
 		$(this).prev(".input-group-addon").css("border-color", "#66AFE9");
 	});
 
-	$("#idca14df814069617c7").on("focusout", function() {
+	$("#id9a675aac470ddc697").on("focusout", function() {
 		$(this).prev(".input-group-addon").css("border-color", "#CCCCCC");
 	});
 	
-	var qs = $("#idca14df814069617c7").quicksearch('#idd29eebb1ac80cda78 tbody tr:not(".sumacniRadek")', {});
+	var qs = $("#id9a675aac470ddc697").quicksearch('#id358b9726434d9b9f8 tbody tr:not(".sumacniRadek")', {});
 	
 	function showHideRemove(){
-		 if($.trim($("#idca14df814069617c7").val()).length) { // mame text
-			 $("#idca14df814069617c7").parent().find(".deleteText").show();
+		 if($.trim($("#id9a675aac470ddc697").val()).length) { // mame text
+			 $("#id9a675aac470ddc697").parent().find(".deleteText").show();
 	     }
 		 else{
-			 $("#idca14df814069617c7").parent().find(".deleteText").hide();
+			 $("#id9a675aac470ddc697").parent().find(".deleteText").hide();
 		 }
 	}
 	showHideRemove();
-	$("#idca14df814069617c7").on("keyup", function() {
+	$("#id9a675aac470ddc697").on("keyup", function() {
 		showHideRemove();
     });
-	$("#idca14df814069617c7").parent().find(".deleteText").on("click", function(){
-		$("#idca14df814069617c7").val("");
+	$("#id9a675aac470ddc697").parent().find(".deleteText").on("click", function(){
+		$("#id9a675aac470ddc697").val("");
 		showHideRemove();
-		$("#idca14df814069617c7").trigger("focus");
+		$("#id9a675aac470ddc697").trigger("focus");
 		qs.reset();
     });
 
@@ -128,13 +128,13 @@ setMinimalContentSize();;
 					</div>
 					<div class="col-md-8 nav_header">
 						<div>
-	<form class="form-inline pull-right" id="id0c86f8657ef5b37d9" method="post" action="./transparent?-1.-languageSelector-form&amp;a=2200272480&amp;f=27.04.2025&amp;t=27.04.2026"><div id="id0c86f8657ef5b37d9_hf_0" hidden="" class="hidden-fields"></div>
+	<form class="form-inline pull-right" id="ide8689023fd1ef4809" method="post" action="./transparent?-1.-languageSelector-form&amp;a=2200272480&amp;f=27.04.2025&amp;t=27.04.2026"><div id="ide8689023fd1ef4809_hf_0" hidden="" class="hidden-fields"></div>
 		<div class="form-group languageDropDown">
-			<div class="dropdown bootstrap-select form-control pull-right bs3"><select class="form-control pull-right" name="languageDropDown" id="id54a97e0213e779c91" onchange="this.form.submit()">
+			<div class="dropdown bootstrap-select form-control pull-right bs3"><select class="form-control pull-right" name="languageDropDown" id="idce0d54d56bf306471" onchange="this.form.submit()">
 <option selected="selected" value="CZECH" data-content="&lt;img src='./fio/resource/cz.fio.ib2.common.wicket.web.layout.image.FioImage/png/VlajkaCzMala-ver-425A2FE80A90297180F0DCC77B3F66B6.png'&gt;&nbsp;Česky&nbsp;" data-tokens="Česky">Česky</option>
 <option value="SLOVAK" data-content="&lt;img src='./fio/resource/cz.fio.ib2.common.wicket.web.layout.image.FioImage/png/VlajkaSkMala-ver-54AA18CD9834A48A7616BB29EA79F102.png'&gt;&nbsp;Slovensky&nbsp;" data-tokens="Slovensky">Slovensky</option>
 <option value="ENGLISH" data-content="&lt;img src='./fio/resource/cz.fio.ib2.common.wicket.web.layout.image.FioImage/png/VlajkaGbMala-ver-E4896565595FC22E344FD619C0ED15BB.png'&gt;&nbsp;English&nbsp;" data-tokens="English">English</option>
-</select><button type="button" tabindex="-1" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" data-id="id54a97e0213e779c91" title="Česky"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner"><img src="./fio/resource/cz.fio.ib2.common.wicket.web.layout.image.FioImage/png/VlajkaCzMala-ver-425A2FE80A90297180F0DCC77B3F66B6.png">&nbsp;Česky&nbsp;</div></div> </div><span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open"><div class="inner open" role="listbox" id="bs-select-1" tabindex="-1"><ul class="dropdown-menu inner " role="presentation"></ul></div></div></div>
+</select><button type="button" tabindex="-1" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" data-id="idce0d54d56bf306471" title="Česky"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner"><img src="./fio/resource/cz.fio.ib2.common.wicket.web.layout.image.FioImage/png/VlajkaCzMala-ver-425A2FE80A90297180F0DCC77B3F66B6.png">&nbsp;Česky&nbsp;</div></div> </div><span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open"><div class="inner open" role="listbox" id="bs-select-1" tabindex="-1"><ul class="dropdown-menu inner " role="presentation"></ul></div></div></div>
 		</div>
 	</form>
 </div>
@@ -182,7 +182,7 @@ setMinimalContentSize();;
 				<i class="fa fa-search"></i>
 				<i class="fa fa-times deleteText" style="display: none;"></i>
 			</span> 
-			<input style="border-left: medium none;" type="text" autocomplete="off" class="form-control searchInput" id="idca14df814069617c7" placeholder="Co hledáte?">
+			<input style="border-left: medium none;" type="text" autocomplete="off" class="form-control searchInput" id="id9a675aac470ddc697" placeholder="Co hledáte?">
 		</div>
 	</div>
 						</div>
@@ -240,7 +240,7 @@ setMinimalContentSize();;
 											<div class="caret"></div>
 										</button>
 										<div class="dropdown-menu pohybySelectDate dropdownClose">
-											<form class="form-inline" id="idef064cb05c19b3f46" method="post" action="./transparent?-1.-dateForm&amp;a=2200272480&amp;f=27.04.2025&amp;t=27.04.2026"><div id="idef064cb05c19b3f46_hf_0" hidden="" class="hidden-fields"></div>
+											<form class="form-inline" id="id340bff6820e41c9a6" method="post" action="./transparent?-1.-dateForm&amp;a=2200272480&amp;f=27.04.2025&amp;t=27.04.2026"><div id="id340bff6820e41c9a6_hf_0" hidden="" class="hidden-fields"></div>
 												<div class="row">
 													<div class="col-md-12 text-center">
 														<div class="radio">
@@ -261,20 +261,20 @@ setMinimalContentSize();;
 															<div class="row">
 																<div class="col-md-6">
 																	<div class="form-group">
-																		<label for="id9566bb96bc0ea9482">Od</label>
+																		<label for="id45a5b0078ad608ea2">Od</label>
 																		<div class="input-group">
-		<input type="text" class="form-control input-sm datepicker datepickerFrom hasDatepicker" value="29.04.2025" name="datumOd:inputField" id="id9566bb96bc0ea9482">
-		<span class="input-group-addon" style="cursor: pointer" id="idc9abc966a389a4f83"> <i class="fa fa-calendar"></i>
+		<input type="text" class="form-control input-sm datepicker datepickerFrom hasDatepicker" value="29.04.2025" name="datumOd:inputField" id="id45a5b0078ad608ea2">
+		<span class="input-group-addon" style="cursor: pointer" id="id0006f707a3a2cd7c3"> <i class="fa fa-calendar"></i>
 		</span>
 	</div>
 																	</div>
 																</div>
 																<div class="col-md-6">
 																	<div class="form-group">
-																		<label for="id0bcfe730a0c805c34">Do</label>
+																		<label for="idf5c75ab2d7726e5b4">Do</label>
 																		<div class="input-group">
-		<input type="text" class="form-control input-sm datepicker datepickerTo hasDatepicker" value="27.04.2026" name="datumDo:inputField" id="id0bcfe730a0c805c34">
-		<span class="input-group-addon" style="cursor: pointer" id="id082e9475c7e62dd55"> <i class="fa fa-calendar"></i>
+		<input type="text" class="form-control input-sm datepicker datepickerTo hasDatepicker" value="27.04.2026" name="datumDo:inputField" id="idf5c75ab2d7726e5b4">
+		<span class="input-group-addon" style="cursor: pointer" id="idf3bfd1b01eb095f05"> <i class="fa fa-calendar"></i>
 		</span>
 	</div>
 																	</div>
@@ -301,7 +301,7 @@ setMinimalContentSize();;
 					<hr>
 					
 					
-					<table class="table" id="idd29eebb1ac80cda78">
+					<table class="table" id="id358b9726434d9b9f8">
 		<thead>
 			<tr>
 		
