@@ -109,4 +109,5 @@ public partial class MainForm : Form
         this.progressLabel.Text = message;
         this.progressLabel.ForeColor = color;
     }
+
 }
