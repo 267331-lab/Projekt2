@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[1.11.56, )"
             },
+            "Microsoft.Playwright": {
+              "target": "Package",
+              "version": "[1.59.0, )"
+            },
             "Selenium.WebDriver": {
               "target": "Package",
               "version": "[4.43.0, )"

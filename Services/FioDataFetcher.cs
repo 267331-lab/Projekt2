@@ -1,6 +1,7 @@
 using System.Text.RegularExpressions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using Microsoft.Playwright;
 using HtmlAgilityPack;
 using HtmlDoc = HtmlAgilityPack.HtmlDocument;
 using NGOFinanceDashboard.Models;
@@ -19,7 +20,7 @@ public interface IFioParser
 /// <summary>
 /// Fetches transaction data from Fio Bank's transparent account page.
 /// </summary>
-public class FioDataFetcher:IDataFetcher
+public class FioDataFetcher : IDataFetcher
 {
     private readonly HttpClient _httpClient;
     private readonly IFioParser _parser;
@@ -47,45 +48,43 @@ public class FioDataFetcher:IDataFetcher
 
     public async Task<IEnumerable<Transaction>> FetchTransactionsAsync(string fioAccountUrl = BaseUrl, CancellationToken cancellationToken = default)
     {
-        Console.WriteLine("[1] Starting Selenium browser...");
-        Task<IEnumerable<Transaction>> task = Task.Run(() =>
+        Console.WriteLine("[1] Starting Playwright...");
+
+        // Initialize Playwright
+        using var playwright = await Playwright.CreateAsync();
+        await using var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
         {
-            var options = new ChromeOptions();
-            options.AddArgument("--headless");           // Run without GUI
-            options.AddArgument("--no-sandbox");         // Required for some systems
-            options.AddArgument("--disable-dev-shm-usage"); // Fix memory issues
-            options.AddArgument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36");
+            Headless = true
+        });
 
-            try
-            {
-                using (var driver = new ChromeDriver(options))
-                {
-                    Console.WriteLine("[2] Opening Fio Bank page...");
-                    driver.Navigate().GoToUrl(fioAccountUrl);
+        // Create a new browser tab (Page)
+        var page = await browser.NewPageAsync();
 
-                    Console.WriteLine("[3] Waiting for page to load (5 seconds)...");
-                    System.Threading.Thread.Sleep(5000); // Wait for JavaScript to render
+        try
+        {
+            Console.WriteLine("[2] Opening Fio Bank page...");
+            // This 'awaits' until the page is loaded (default is DOMContentLoaded)
+            await page.GotoAsync(fioAccountUrl, new PageGotoOptions { WaitUntil = WaitUntilState.NetworkIdle });
 
-                    Console.WriteLine("[4] Getting page source...");
-                    var pageSource = driver.PageSource;
+            // 3. Instead of a 5s sleep, we wait for a specific element to exist.
+            // If the element doesn't show up in 30s (default), it throws an exception.
+            Console.WriteLine("[3] Waiting for transaction data...");
+            await page.WaitForSelectorAsync("//table[contains(@class,'table')]/tbody/tr");
 
-                    Console.WriteLine($"[5] Page loaded: {pageSource.Length} characters");
+            // 4. Get page source
+            var pageSource = await page.ContentAsync();
+            Console.WriteLine($"[5] Page loaded: {pageSource.Length} characters");
 
-                    // Save for debugging
-                    File.WriteAllText("fio_page.html", pageSource);
-                    Console.WriteLine("[6] Saved to fio_page.html");
+            // 5. Async File I/O
+            await File.WriteAllTextAsync("fio_page.html", pageSource, cancellationToken);
 
-                    return _parser.ParseRawHtml(pageSource);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"[ERROR] {ex.Message}");
-                throw;
-            }
-        }, cancellationToken);
-
-    return task.Result;
+            return _parser.ParseRawHtml(pageSource);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[ERROR] {ex.Message}");
+            throw;
+        }
     }
 }
 
