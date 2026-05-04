@@ -93,7 +93,7 @@ partial class MainForm
 
         // URL TextBox
         this.urlTextBox.Width = 700;
-        this.urlTextBox.Text = "URL to Fio bank transparent account (example: https://ib.fio.cz/ib/transparent?a=2200272480)";
+        this.urlTextBox.Text = "URL to Fio bank transparent account (example: https://ib.fio.cz/ib/transparent?a=2200272480 )";
         this.urlTextBox.Margin = new System.Windows.Forms.Padding(5);
 
         // Fetch Button
