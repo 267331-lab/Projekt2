@@ -9,7 +9,6 @@ public class FinanceReport
     public List<(string, decimal)> TopContributors { get; set; }
     public Dictionary<string, int> Messages { get; set; }
     public decimal CashFlow { get; set; }
-    public decimal Transaction { get; set; }
     public Transaction BiggestExpense { get; set; }
 
 }

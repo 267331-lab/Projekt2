@@ -9,7 +9,7 @@ public abstract class DashboardException : Exception
     public string LogDetails { get; }
 
     protected DashboardException(string message, string userFriendlyMessage, string? logDetails = null, Exception innerException = null) 
-        : base(message)
+        : base(message, innerException)
     {
         UserFriendlyMessage = userFriendlyMessage;
         LogDetails = logDetails ?? message;
@@ -24,7 +24,7 @@ public class DataFetchException : DashboardException
     public string? Url { get; }
     public int? HttpStatusCode { get; }
 
-    public DataFetchException(string url, string message, int? statusCode = null, Exception? inner = null)
+    public DataFetchException(string url, string message, Exception? inner, int? statusCode = null)
         : base(
             $"Failed to fetch from {url}: {message}",
             "Nepodařilo se načíst data z Fio banky. Zkontroluj URL a připojení.",
@@ -82,9 +82,9 @@ public class ValidationException : DashboardException
     }
 }
 
-public class InvalidURLException : DashboardException
+public class InvalidUrlException : DashboardException
 {
-    public InvalidURLException(string message)
+    public InvalidUrlException(string message)
     : base(
             $"Is not a Fio transparent account url: {message}",
             $"Neplatný vstup: {message}",

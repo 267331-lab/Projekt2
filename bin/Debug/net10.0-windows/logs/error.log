@@ -120,3 +120,28 @@ StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsA
 StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 51
    at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 28
 --------------------------------------------------------------------------------
+[2026-05-04 13:04:10] [MainForm.FetchButton_Click] [NullReferenceException] Object reference not set to an instance of an object.
+StackTrace:    at NGOFinanceDashboard.Forms.MainForm.FetchButton_Click(Object sender, EventArgs e) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Forms\MainForm.cs:line 49
+--------------------------------------------------------------------------------
+[2026-05-04 13:04:24] [MainForm.FetchButton_Click] [NullReferenceException] Object reference not set to an instance of an object.
+StackTrace:    at NGOFinanceDashboard.Forms.MainForm.FetchButton_Click(Object sender, EventArgs e) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Forms\MainForm.cs:line 49
+--------------------------------------------------------------------------------
+[2026-05-04 13:05:40] [MainFormViewModel.FetchAndAnalyzeAsync] [InvalidUrlException] Is not a Fio transparent account url: Zadaná Url URL to Fio bank transparent account (example: https://ib.fio.cz/ib/transparent?a=2200272480 ) nepatří FIO transparentnímu účtu
+StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 39
+   at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 26
+--------------------------------------------------------------------------------
+[2026-05-04 13:14:56] [FioDataFetcher.FetchTransactionsAsync] [TimeoutException] Timeout 30000ms exceeded.
+Call log:
+  - waiting for Locator("//table[contains(@class,'table')]/tbody/tr") to be visible
+StackTrace:    at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 201
+   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal, String title) in /_/src/Playwright/Transport/Connection.cs:line 505
+   at Microsoft.Playwright.Core.Frame.WaitForSelectorAsync(String selector, FrameWaitForSelectorOptions options) in /_/src/Playwright/Core/Frame.cs:line 689
+   at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 55
+   at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 58
+--------------------------------------------------------------------------------
+[2026-05-04 13:14:56] [MainFormViewModel.FetchAndAnalyzeAsync] [DataFetchException] Failed to fetch from https://ib.fio.cz/ib/transparent?a=123456789: Timeout 30000ms exceeded.
+Call log:
+  - waiting for Locator("//table[contains(@class,'table')]/tbody/tr") to be visible
+StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 68
+   at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 26
+--------------------------------------------------------------------------------

@@ -34,15 +34,15 @@ public partial class MainForm : Form
         IFioParser parser = new FioHtmlParser();
         return new FioDataFetcher(_httpClientLazy.Value, parser);
     }
-
+    private CancellationTokenSource? _cts;
     private async void FetchButton_Click(object? sender, EventArgs e)
 {
+    
     if (_isLoading) return;
-
+    _cts = new CancellationTokenSource();  
     _isLoading = true;
-    try
-    {
-        await _viewModel.FetchAndAnalyzeAsync(this.urlTextBox.Text);
+    try {
+        await _viewModel.FetchAndAnalyzeAsync(this.urlTextBox.Text, _cts.Token);
     }
     catch (DashboardException ex)
     {

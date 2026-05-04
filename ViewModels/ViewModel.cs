@@ -9,8 +9,6 @@ public class MainFormViewModel
     private readonly IDataFetcher _dataFetcher;
     private readonly IDataAnalyzer _dataAnalyzer;
     private List<Transaction> _currentTransactions = new();
-
-    public event EventHandler<string>? ProgressUpdated;
     public event EventHandler<(string Message, Color Color)>? StatusChanged;
     public event EventHandler? DataAnalyzed;
 
@@ -20,12 +18,12 @@ public class MainFormViewModel
         _dataAnalyzer = dataAnalyzer;
     }
 
-    public async Task FetchAndAnalyzeAsync(string url)
+    public async Task FetchAndAnalyzeAsync(string url, CancellationToken cancellationToken)
     {
         try
         {
             UpdateStatus("Loading data...", Color.Blue);
-            _currentTransactions = (await _dataFetcher.FetchTransactionsAsync(url)).ToList();
+            _currentTransactions = (await _dataFetcher.FetchTransactionsAsync(url, cancellationToken)).ToList();
             UpdateStatus($"✓ Loaded {_currentTransactions.Count} transactions", Color.Green);
             DataAnalyzed?.Invoke(this, EventArgs.Empty);
         }

@@ -28,7 +28,7 @@ public class FioDataFetcher : IDataFetcher
     }
 
     public async Task<IEnumerable<Transaction>> FetchTransactionsAsync(
-        string fioAccountUrl = "", CancellationToken cancellationToken = default)
+        string fioAccountUrl, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(fioAccountUrl))
             throw new ValidationException(nameof(fioAccountUrl), "URL nemůže být prázdné");
@@ -36,7 +36,7 @@ public class FioDataFetcher : IDataFetcher
     !uri.Host.EndsWith("fio.cz") ||
     !uri.AbsolutePath.Contains("/ib/transparent") ||
     !uri.Query.Contains("a="))
-            throw new InvalidURLException($"Zadaná Url {fioAccountUrl} nepatří FIO transparentnímu účtu");
+            throw new InvalidUrlException($"Zadaná Url {fioAccountUrl} nepatří FIO transparentnímu účtu");
 
         try
         {
@@ -47,7 +47,11 @@ public class FioDataFetcher : IDataFetcher
             });
 
             var page = await browser.NewPageAsync();
-            await page.GotoAsync(fioAccountUrl, new PageGotoOptions { WaitUntil = WaitUntilState.NetworkIdle });
+            
+            cancellationToken.ThrowIfCancellationRequested();
+            await page.GotoAsync(fioAccountUrl, new PageGotoOptions { WaitUntil = WaitUntilState.NetworkIdle, Timeout = 5000});
+            cancellationToken.ThrowIfCancellationRequested();
+
             await page.WaitForSelectorAsync("//table[contains(@class,'table')]/tbody/tr");
 
             var pageSource = await page.ContentAsync();
@@ -56,12 +60,12 @@ public class FioDataFetcher : IDataFetcher
         catch (PlaywrightException ex)
         {
             ExceptionHandler.HandleException(ex, "FioDataFetcher.FetchTransactionsAsync");
-            throw new DataFetchException(fioAccountUrl, "Playwright failed");
+            throw new DataFetchException(fioAccountUrl, "Playwright failed",ex);
         }
         catch (Exception ex)
         {
             ExceptionHandler.HandleException(ex, "FioDataFetcher.FetchTransactionsAsync");
-            throw new DataFetchException(fioAccountUrl, ex.Message);
+            throw new DataFetchException(fioAccountUrl, ex.Message, ex);
         }
     }
 }
