@@ -21,46 +21,41 @@ public class MainFormViewModel
     }
 
     public async Task FetchAndAnalyzeAsync(string url)
-{
-   try
     {
-        UpdateStatus("Loading data...", Color.Blue);
-        _currentTransactions = (await _dataFetcher.FetchTransactionsAsync(url)).ToList();
-        UpdateStatus($"✓ Loaded {_currentTransactions.Count} transactions", Color.Green);
-        DataAnalyzed?.Invoke(this, EventArgs.Empty);
+        try
+        {
+            UpdateStatus("Loading data...", Color.Blue);
+            _currentTransactions = (await _dataFetcher.FetchTransactionsAsync(url)).ToList();
+            UpdateStatus($"✓ Loaded {_currentTransactions.Count} transactions", Color.Green);
+            DataAnalyzed?.Invoke(this, EventArgs.Empty);
+        }
+        catch (ValidationException ex)
+        {
+            ExceptionHandler.HandleException(ex, "MainFormViewModel.FetchAndAnalyzeAsync");
+            UpdateStatus($"⚠️ {ex.UserFriendlyMessage}", Color.Orange);
+        }
+        catch (DataFetchException ex)
+        {
+            ExceptionHandler.HandleException(ex, "MainFormViewModel.FetchAndAnalyzeAsync");
+            UpdateStatus($"❌ {ex.UserFriendlyMessage}", Color.Red);
+        }
+        catch (HtmlParsingException ex)
+        {
+            ExceptionHandler.HandleException(ex, "MainFormViewModel.FetchAndAnalyzeAsync");
+            UpdateStatus($"❌ {ex.UserFriendlyMessage}", Color.Red);
+        }
+        catch (DashboardException ex)
+        {
+            ExceptionHandler.HandleException(ex, "MainFormViewModel.FetchAndAnalyzeAsync");
+            UpdateStatus($"❌ {ex.UserFriendlyMessage}", Color.Red);
+        }
+        catch (Exception ex)
+        {
+            ExceptionHandler.HandleException(ex, "MainFormViewModel.FetchAndAnalyzeAsync");
+            UpdateStatus("❌ Unknown error", Color.Red);
+        }
     }
-    catch (ValidationException ex)
-    {
-        ExceptionHandler.HandleException(ex, "MainFormViewModel.FetchAndAnalyzeAsync");
-        UpdateStatus($"⚠️ {ex.UserFriendlyMessage}", Color.Orange);
-    }
-    catch (DataFetchException ex)
-    {
-        ExceptionHandler.HandleException(ex, "MainFormViewModel.FetchAndAnalyzeAsync");
-        UpdateStatus($"❌ {ex.UserFriendlyMessage}", Color.Red);
-    }
-    catch (HtmlParsingException ex)
-    {
-        ExceptionHandler.HandleException(ex, "MainFormViewModel.FetchAndAnalyzeAsync");
-        UpdateStatus($"❌ {ex.UserFriendlyMessage}", Color.Red);
-    }
-    catch (DashboardException ex)
-    {
-        ExceptionHandler.HandleException(ex, "MainFormViewModel.FetchAndAnalyzeAsync");
-        UpdateStatus($"❌ {ex.UserFriendlyMessage}", Color.Red);
-    }
-    catch (Exception ex)
-    {
-        ExceptionHandler.HandleException(ex, "MainFormViewModel.FetchAndAnalyzeAsync");
-        UpdateStatus("❌ Unknown error", Color.Red);
-    }
-}
 
-private void LogException(DashboardException ex)
-{
-    System.Diagnostics.Debug.WriteLine($"[{DateTime.Now:HH:mm:ss}] {ex.GetType().Name}: {ex.LogDetails}");
-    // Sem by šel i file logging
-}
     public (decimal CashFlow, Transaction? BiggestExpense, List<(string, decimal)> TopContributors, Dictionary<string, int> Messages) GetAnalysis()
     {
         var cashFlow = _dataAnalyzer.CalculateCashFlow(_currentTransactions);

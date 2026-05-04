@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\venca\\OneDrive\\Plocha\\Projekt2\\NGOFinanceDashBoard\\NGOFinanceDashboard.csproj": {}
+    "C:\\Users\\venca\\OneDrive\\Plocha\\Projekt2\\NGOFinanceDashboard\\NGOFinanceDashboard.csproj": {}
   },
   "projects": {
-    "C:\\Users\\venca\\OneDrive\\Plocha\\Projekt2\\NGOFinanceDashBoard\\NGOFinanceDashboard.csproj": {
+    "C:\\Users\\venca\\OneDrive\\Plocha\\Projekt2\\NGOFinanceDashboard\\NGOFinanceDashboard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\venca\\OneDrive\\Plocha\\Projekt2\\NGOFinanceDashBoard\\NGOFinanceDashboard.csproj",
+        "projectUniqueName": "C:\\Users\\venca\\OneDrive\\Plocha\\Projekt2\\NGOFinanceDashboard\\NGOFinanceDashboard.csproj",
         "projectName": "NGOFinanceDashboard",
-        "projectPath": "C:\\Users\\venca\\OneDrive\\Plocha\\Projekt2\\NGOFinanceDashBoard\\NGOFinanceDashboard.csproj",
+        "projectPath": "C:\\Users\\venca\\OneDrive\\Plocha\\Projekt2\\NGOFinanceDashboard\\NGOFinanceDashboard.csproj",
         "packagesPath": "C:\\Users\\venca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\venca\\OneDrive\\Plocha\\Projekt2\\NGOFinanceDashBoard\\obj\\",
+        "outputPath": "C:\\Users\\venca\\OneDrive\\Plocha\\Projekt2\\NGOFinanceDashboard\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\venca\\AppData\\Roaming\\NuGet\\NuGet.Config"

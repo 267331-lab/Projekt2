@@ -40,3 +40,7 @@ StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsA
 StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 48
    at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 28
 --------------------------------------------------------------------------------
+[2026-05-04 10:03:56] [MainFormViewModel.FetchAndAnalyzeAsync] [InvalidURLException] Is not a Fio transparent account url: Zadaná Url https://ib.fio.cz/ib/trasparent?a=2200272480&f=27.04.2025&t=27.04.2026 nepatří FIO transparentnímu účtu
+StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashboard\Services\FioDataFetcher.cs:line 48
+   at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashboard\Models\ViewModel.cs:line 28
+--------------------------------------------------------------------------------

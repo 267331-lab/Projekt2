@@ -13,7 +13,6 @@ public partial class MainForm : Form
     {
         InitializeComponent();
 
-        // Používej rozhraní, ne konkrétní třídy!
         IDataFetcher dataFetcher = CreateDataFetcher();
         IDataAnalyzer dataAnalyzer = new FinanceAnalyzer();
 
@@ -26,7 +25,6 @@ public partial class MainForm : Form
         this.fetchButton.Click += FetchButton_Click;
     }
 
-    /// </summary>
     private static readonly Lazy<HttpClient> _httpClientLazy =
     new Lazy<HttpClient>(() => new HttpClient());
 
