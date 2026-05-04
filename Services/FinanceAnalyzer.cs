@@ -74,7 +74,7 @@ public class FinanceAnalyzer : IDataAnalyzer
 
     var messageCounts = transactions
         .Where(t => !string.IsNullOrWhiteSpace(t.Message))
-        .GroupBy(t => t.Message.Trim()) //////MAYBE  DIP BREACH
+        .GroupBy(t => t.Message.Trim())
         .Select(g => new { Message = g.Key, Count = g.Count() })
         .OrderByDescending(x => x.Count)
         .Take(topCount)

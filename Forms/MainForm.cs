@@ -3,6 +3,7 @@ using NGOFinanceDashboard.Services;
 using NGOFinanceDashboard.Utilities.Exceptions;
 using NGOFinanceDashboard.Utilities;
 using NGOFinanceDashboard.ViewModels;
+using NGOFinanceDashboard.Models;
 
 public partial class MainForm : Form
 {
@@ -63,17 +64,17 @@ public partial class MainForm : Form
     {
         try
         {
-            var (cashFlow, biggestExpense, topContributors, messages) = _viewModel.GetAnalysis();
+            FinanceReport financeReport = _viewModel.GetAnalysis();
 
-            this.cashFlowValueLabel.Text = $"Total: {cashFlow}";
-            this.biggestExpenseValueLabel.Text = biggestExpense != null
-                ? $"{biggestExpense.Amount}\n{biggestExpense.AccountName}"
+            this.cashFlowValueLabel.Text = $"Total: {financeReport.CashFlow}";
+            this.biggestExpenseValueLabel.Text = financeReport.BiggestExpense != null
+                ? $"{financeReport.BiggestExpense.Amount}\n{financeReport.BiggestExpense.AccountName}"
                 : "No expenses";
-            this.topContributorsValueLabel.Text = topContributors.Count > 0
-                ? string.Join("\n", topContributors.Select((c, i) => $"{i + 1}. {c.Item1}: {c.Item2}"))
+            this.topContributorsValueLabel.Text = financeReport.TopContributors.Count > 0
+                ? string.Join("\n", financeReport.TopContributors.Select((c, i) => $"{i + 1}. {c.Item1}: {c.Item2}"))
                 : "No contributors";
-            this.commonMessagesValueLabel.Text = messages.Count > 0
-                ? string.Join("\n\n", messages.Take(3).Select(m => $"{m.Key}: {m.Value}x"))
+            this.commonMessagesValueLabel.Text = financeReport.Messages.Count > 0
+                ? string.Join("\n\n", financeReport.Messages.Take(3).Select(m => $"{m.Key}: {m.Value}x"))
                 : "No messages";
 
             DisplayTransactionGrid();

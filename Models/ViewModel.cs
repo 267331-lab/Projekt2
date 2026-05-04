@@ -56,14 +56,17 @@ public class MainFormViewModel
         }
     }
 
-    public (decimal CashFlow, Transaction? BiggestExpense, List<(string, decimal)> TopContributors, Dictionary<string, int> Messages) GetAnalysis()
-    {
-        var cashFlow = _dataAnalyzer.CalculateCashFlow(_currentTransactions);
-        var biggestExpense = _dataAnalyzer.FindBiggestExpense(_currentTransactions);
-        var topContributors = _dataAnalyzer.GetTop3Contributors(_currentTransactions);
-        var messages = _dataAnalyzer.GetMostCommonMessages(_currentTransactions);
 
-        return (cashFlow, biggestExpense, topContributors, messages);
+    public FinanceReport GetAnalysis()
+    {
+        FinanceReport financeReport = new();
+        
+        financeReport.CashFlow = _dataAnalyzer.CalculateCashFlow(_currentTransactions);
+        financeReport.BiggestExpense = _dataAnalyzer.FindBiggestExpense(_currentTransactions);
+        financeReport.TopContributors = _dataAnalyzer.GetTop3Contributors(_currentTransactions);
+        financeReport.Messages = _dataAnalyzer.GetMostCommonMessages(_currentTransactions);
+
+        return financeReport;
     }
 
     public List<Transaction> GetTransactions() => _currentTransactions;

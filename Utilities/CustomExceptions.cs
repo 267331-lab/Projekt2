@@ -8,7 +8,7 @@ public abstract class DashboardException : Exception
     public string UserFriendlyMessage { get; }
     public string LogDetails { get; }
 
-    protected DashboardException(string message, string userFriendlyMessage, string? logDetails = null) 
+    protected DashboardException(string message, string userFriendlyMessage, string? logDetails = null, Exception innerException = null) 
         : base(message)
     {
         UserFriendlyMessage = userFriendlyMessage;
@@ -24,11 +24,11 @@ public class DataFetchException : DashboardException
     public string? Url { get; }
     public int? HttpStatusCode { get; }
 
-    public DataFetchException(string url, string message, int? statusCode = null)
+    public DataFetchException(string url, string message, int? statusCode = null, Exception? inner = null)
         : base(
             $"Failed to fetch from {url}: {message}",
             "Nepodařilo se načíst data z Fio banky. Zkontroluj URL a připojení.",
-            $"HTTP {statusCode}: {message}"
+            inner?.ToString()
         )
     {
         Url = url;
@@ -41,11 +41,12 @@ public class DataFetchException : DashboardException
 /// </summary>
 public class HtmlParsingException : DashboardException
 {
-    public HtmlParsingException(string message)
+    public HtmlParsingException(string message, Exception innerException)
         : base(
             $"Failed to parse HTML: {message}",
             "Formulář Fio banky se změnil. Kontaktuj administrátora.",
-            message
+            message,
+            innerException
         )
     {
     }

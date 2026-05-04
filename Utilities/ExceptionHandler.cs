@@ -55,7 +55,7 @@ public static class ExceptionHandler
     {
         try
         {
-            File.AppendAllText(LogFilePath, message);
+            File.AppendAllTextAsync(LogFilePath, message);
         }
         catch
         {

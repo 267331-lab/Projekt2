@@ -1,21 +1,9 @@
 
 using Microsoft.Playwright;
-using HtmlDoc = HtmlAgilityPack.HtmlDocument;
 using NGOFinanceDashboard.Models;
 using NGOFinanceDashboard.Utilities.Exceptions;
 using NGOFinanceDashboard.Utilities;
-
-using System.Globalization;
-
 namespace NGOFinanceDashboard.Services;
-
-/// <summary>
-/// Defines the contract for parsing Fio Bank's HTML structure.
-/// </summary>
-public interface IFioParser
-{
-    IEnumerable<Transaction> ParseRawHtml(string html);
-}
 
 /// <summary>
 /// Fetches transaction data from Fio Bank's transparent account page.
@@ -44,7 +32,10 @@ public class FioDataFetcher : IDataFetcher
     {
         if (string.IsNullOrWhiteSpace(fioAccountUrl))
             throw new ValidationException(nameof(fioAccountUrl), "URL nemůže být prázdné");
-        if (!fioAccountUrl.Contains("ib.fio.cz/ib/transparent?"))
+        if (!Uri.TryCreate(fioAccountUrl, UriKind.Absolute, out var uri) ||
+    !uri.Host.EndsWith("fio.cz") ||
+    !uri.AbsolutePath.Contains("/ib/transparent") ||
+    !uri.Query.Contains("a="))
             throw new InvalidURLException($"Zadaná Url {fioAccountUrl} nepatří FIO transparentnímu účtu");
 
         try
@@ -65,76 +56,13 @@ public class FioDataFetcher : IDataFetcher
         catch (PlaywrightException ex)
         {
             ExceptionHandler.HandleException(ex, "FioDataFetcher.FetchTransactionsAsync");
-            throw new DataFetchException(fioAccountUrl, "Playwright failed", null);
+            throw new DataFetchException(fioAccountUrl, "Playwright failed");
         }
         catch (Exception ex)
         {
             ExceptionHandler.HandleException(ex, "FioDataFetcher.FetchTransactionsAsync");
-            throw new DataFetchException(fioAccountUrl, ex.Message, null);
+            throw new DataFetchException(fioAccountUrl, ex.Message);
         }
     }
 }
 
-/// <summary>
-/// Concrete implementation of the Fio HTML parser.
-/// </summary>
-public class FioHtmlParser : IFioParser
-{
-    public IEnumerable<Transaction> ParseRawHtml(string html)
-    {
-        try
-        {
-            var transactions = new List<Transaction>();
-            var doc = new HtmlDoc();
-            doc.LoadHtml(html);
-
-            var rows = doc.DocumentNode.SelectNodes("//table[contains(@class,'table')]/tbody/tr");
-
-            if (rows == null || rows.Count == 0)
-                throw new HtmlParsingException("Tabulka s transakcemi nenalezena");
-
-            foreach (var row in rows)
-            {
-                try
-                {
-                    var cells = row.SelectNodes("td");
-                    if (cells == null || cells.Count < 8) continue;
-
-                    transactions.Add(new Transaction
-                    {
-                        Date = DateTime.ParseExact(cells[0].InnerText.Trim(), "dd.MM.yyyy", CultureInfo.InvariantCulture),
-                        Amount = decimal.Parse(cells[1].InnerText.Replace("&nbsp;", "").Replace("CZK", "").Replace(" ", "").Replace(",", ".").Trim(), CultureInfo.InvariantCulture),
-                        Currency = cells[1].InnerText.Trim(),
-                        Type = cells[2].InnerText.Trim(),
-                        AccountName = cells[3].InnerText.Trim(),
-                        Message = cells[4].InnerText.Trim(),
-                        ContactSymbol = cells[5].InnerText.Trim(),
-                        VariableSymbol = cells[6].InnerText.Trim(),
-                        SpecificSymbol = cells[7].InnerText.Trim(),
-                        Note = cells.Count > 8 ? cells[8].InnerText.Trim() : "",
-                    });
-                }
-                catch (FormatException ex)
-                {
-                    ExceptionHandler.HandleException(ex, "FioHtmlParser.ParseRawHtml");
-                    throw new HtmlParsingException($"Format error: {ex.Message}");
-                }
-                catch (Exception ex)
-                {
-                    ExceptionHandler.HandleException(ex, "FioHtmlParser.ParseRawHtml");
-                    throw new HtmlParsingException(ex.Message);
-                }
-            }
-
-            return transactions;
-        }
-        catch (DashboardException)
-        {
-            throw;
-        }
-        catch (Exception ex)
-        {
-            throw new HtmlParsingException(ex.Message);
-        }
-    }
-}

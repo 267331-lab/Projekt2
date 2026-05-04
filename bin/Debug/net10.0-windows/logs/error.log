@@ -1,0 +1,122 @@
+[2026-05-04 10:31:58] [FioDataFetcher.FetchTransactionsAsync] [PlaywrightException] Protocol error (Page.navigate): Cannot navigate to invalid URL
+Call log:
+  - navigating to "ib.fio.cz/ib/transparent?a=2200272480&f=27.04.2025&t=27.04.2026", waiting until "networkidle"
+StackTrace:    at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 201
+   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal, String title) in /_/src/Playwright/Transport/Connection.cs:line 505
+   at Microsoft.Playwright.Core.Frame.GotoAsync(String url, FrameGotoOptions options) in /_/src/Playwright/Core/Frame.cs:line 815
+   at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 59
+   at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 63
+--------------------------------------------------------------------------------
+[2026-05-04 10:31:58] [MainFormViewModel.FetchAndAnalyzeAsync] [DataFetchException] Failed to fetch from ib.fio.cz/ib/transparent?a=2200272480&f=27.04.2025&t=27.04.2026: Playwright failed
+StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 68
+   at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 28
+--------------------------------------------------------------------------------
+[2026-05-04 10:32:09] [FioDataFetcher.FetchTransactionsAsync] [PlaywrightException] Protocol error (Page.navigate): Cannot navigate to invalid URL
+Call log:
+  - navigating to "www.ib.fio.cz/ib/transparent?a=2200272480&f=27.04.2025&t=27.04.2026", waiting until "networkidle"
+StackTrace:    at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 201
+   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal, String title) in /_/src/Playwright/Transport/Connection.cs:line 505
+   at Microsoft.Playwright.Core.Frame.GotoAsync(String url, FrameGotoOptions options) in /_/src/Playwright/Core/Frame.cs:line 815
+   at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 59
+   at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 63
+--------------------------------------------------------------------------------
+[2026-05-04 10:32:09] [MainFormViewModel.FetchAndAnalyzeAsync] [DataFetchException] Failed to fetch from www.ib.fio.cz/ib/transparent?a=2200272480&f=27.04.2025&t=27.04.2026: Playwright failed
+StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 68
+   at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 28
+--------------------------------------------------------------------------------
+[2026-05-04 10:34:14] [FioDataFetcher.FetchTransactionsAsync] [PlaywrightException] Protocol error (Page.navigate): Cannot navigate to invalid URL
+Call log:
+  - navigating to "URL to Fio bank transparent account (example: https://ib.fio.cz/ib/transparent?a=2200272480)", waiting until "networkidle"
+StackTrace:    at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 201
+   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal, String title) in /_/src/Playwright/Transport/Connection.cs:line 505
+   at Microsoft.Playwright.Core.Frame.GotoAsync(String url, FrameGotoOptions options) in /_/src/Playwright/Core/Frame.cs:line 815
+   at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 59
+   at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 63
+--------------------------------------------------------------------------------
+[2026-05-04 10:34:14] [MainFormViewModel.FetchAndAnalyzeAsync] [DataFetchException] Failed to fetch from URL to Fio bank transparent account (example: https://ib.fio.cz/ib/transparent?a=2200272480): Playwright failed
+StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 68
+   at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 28
+--------------------------------------------------------------------------------
+[2026-05-04 10:53:50] [MainFormViewModel.FetchAndAnalyzeAsync] [InvalidURLException] Is not a Fio transparent account url: Zadaná Url URL to Fio bank transparent account (example: https://ib.fio.cz/ib/transparent?a=2200272480) nepatří FIO transparentnímu účtu
+StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 49
+   at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 28
+--------------------------------------------------------------------------------
+[2026-05-04 10:54:45] [FioDataFetcher.FetchTransactionsAsync] [TimeoutException] Timeout 30000ms exceeded.
+Call log:
+  - waiting for Locator("//table[contains(@class,'table')]/tbody/tr") to be visible
+StackTrace:    at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 201
+   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal, String title) in /_/src/Playwright/Transport/Connection.cs:line 505
+   at Microsoft.Playwright.Core.Frame.WaitForSelectorAsync(String selector, FrameWaitForSelectorOptions options) in /_/src/Playwright/Core/Frame.cs:line 689
+   at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 61
+   at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 64
+--------------------------------------------------------------------------------
+[2026-05-04 10:54:45] [MainFormViewModel.FetchAndAnalyzeAsync] [DataFetchException] Failed to fetch from https://ib.fio.cz/ib/trasparent?a=2200272480: Timeout 30000ms exceeded.
+Call log:
+  - waiting for Locator("//table[contains(@class,'table')]/tbody/tr") to be visible
+StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 74
+   at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 28
+--------------------------------------------------------------------------------
+[2026-05-04 10:55:39] [MainFormViewModel.FetchAndAnalyzeAsync] [InvalidURLException] Is not a Fio transparent account url: Zadaná Url https://ib.fio.cz/ib/transparent nepatří FIO transparentnímu účtu
+StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 49
+   at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 28
+--------------------------------------------------------------------------------
+[2026-05-04 10:55:46] [MainFormViewModel.FetchAndAnalyzeAsync] [InvalidURLException] Is not a Fio transparent account url: Zadaná Url https://ib.fio.cz/ib/transparen nepatří FIO transparentnímu účtu
+StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 49
+   at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 28
+--------------------------------------------------------------------------------
+[2026-05-04 10:56:15] [MainFormViewModel.FetchAndAnalyzeAsync] [InvalidURLException] Is not a Fio transparent account url: Zadaná Url https://ib.fio.cz/ib/transparent?a=2200272480&f=27.04.2025&t=27.04.2026 nepatří FIO transparentnímu účtu
+StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 49
+   at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 28
+--------------------------------------------------------------------------------
+[2026-05-04 10:59:31] [FioDataFetcher.FetchTransactionsAsync] [TimeoutException] Timeout 30000ms exceeded.
+Call log:
+  - waiting for Locator("//table[contains(@class,'table')]/tbody/tr") to be visible
+StackTrace:    at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 201
+   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal, String title) in /_/src/Playwright/Transport/Connection.cs:line 505
+   at Microsoft.Playwright.Core.Frame.WaitForSelectorAsync(String selector, FrameWaitForSelectorOptions options) in /_/src/Playwright/Core/Frame.cs:line 689
+   at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 63
+   at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 66
+--------------------------------------------------------------------------------
+[2026-05-04 10:59:31] [MainFormViewModel.FetchAndAnalyzeAsync] [DataFetchException] Failed to fetch from  https://ib.fio.cz/ib/transparent?a=2200272480): Timeout 30000ms exceeded.
+Call log:
+  - waiting for Locator("//table[contains(@class,'table')]/tbody/tr") to be visible
+StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 76
+   at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 28
+--------------------------------------------------------------------------------
+[2026-05-04 10:59:33] [MainFormViewModel.FetchAndAnalyzeAsync] [InvalidURLException] Is not a Fio transparent account url: Zadaná Url  https://ib.fio.cz/ib/trnsparent?a=2200272480) nepatří FIO transparentnímu účtu
+StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 51
+   at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 28
+--------------------------------------------------------------------------------
+[2026-05-04 10:59:41] [MainFormViewModel.FetchAndAnalyzeAsync] [InvalidURLException] Is not a Fio transparent account url: Zadaná Url  https://ib.fio.cz/ib/transparenta=2200272480) nepatří FIO transparentnímu účtu
+StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 51
+   at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 28
+--------------------------------------------------------------------------------
+[2026-05-04 10:59:49] [MainFormViewModel.FetchAndAnalyzeAsync] [InvalidURLException] Is not a Fio transparent account url: Zadaná Url  https://ib.fio.cz/ib/transparent?=2200272480) nepatří FIO transparentnímu účtu
+StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 51
+   at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 28
+--------------------------------------------------------------------------------
+[2026-05-04 11:16:58] [MainFormViewModel.FetchAndAnalyzeAsync] [InvalidURLException] Is not a Fio transparent account url: Zadaná Url URL to Fio bank transparent account (example: https://ib.fio.cz/ib/transparent?a=2200272480) nepatří FIO transparentnímu účtu
+StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 51
+   at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 28
+--------------------------------------------------------------------------------
+[2026-05-04 11:17:19] [FioDataFetcher.FetchTransactionsAsync] [PlaywrightException] net::ERR_CONNECTION_REFUSED at http://ib.fio.cz/ib/transparent?a=2200272480
+Call log:
+  - navigating to "http://ib.fio.cz/ib/transparent?a=2200272480", waiting until "networkidle"
+StackTrace:    at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 201
+   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal, String title) in /_/src/Playwright/Transport/Connection.cs:line 505
+   at Microsoft.Playwright.Core.Frame.GotoAsync(String url, FrameGotoOptions options) in /_/src/Playwright/Core/Frame.cs:line 815
+   at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 62
+   at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 66
+--------------------------------------------------------------------------------
+[2026-05-04 11:17:19] [MainFormViewModel.FetchAndAnalyzeAsync] [DataFetchException] Failed to fetch from  http://ib.fio.cz/ib/transparent?a=2200272480: Playwright failed
+StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 71
+   at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 28
+--------------------------------------------------------------------------------
+[2026-05-04 11:17:32] [MainFormViewModel.FetchAndAnalyzeAsync] [InvalidURLException] Is not a Fio transparent account url: Zadaná Url ib.fio.cz/ib/transparent?a=2200272480 nepatří FIO transparentnímu účtu
+StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 51
+   at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 28
+--------------------------------------------------------------------------------
+[2026-05-04 11:17:38] [MainFormViewModel.FetchAndAnalyzeAsync] [InvalidURLException] Is not a Fio transparent account url: Zadaná Url www.ib.fio.cz/ib/transparent?a=2200272480 nepatří FIO transparentnímu účtu
+StackTrace:    at NGOFinanceDashboard.Services.FioDataFetcher.FetchTransactionsAsync(String fioAccountUrl, CancellationToken cancellationToken) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Services\FioDataFetcher.cs:line 51
+   at NGOFinanceDashboard.ViewModels.MainFormViewModel.FetchAndAnalyzeAsync(String url) in C:\Users\venca\OneDrive\Plocha\Projekt2\NGOFinanceDashBoard\Models\ViewModel.cs:line 28
+--------------------------------------------------------------------------------
