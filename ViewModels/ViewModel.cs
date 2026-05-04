@@ -47,6 +47,10 @@ public class MainFormViewModel
             ExceptionHandler.HandleException(ex, "MainFormViewModel.FetchAndAnalyzeAsync");
             UpdateStatus($"❌ {ex.UserFriendlyMessage}", Color.Red);
         }
+        catch (OperationCanceledException)
+        {
+            UpdateStatus("⚠️ Načítání zrušeno", Color.Orange);
+        }
         catch (Exception ex)
         {
             ExceptionHandler.HandleException(ex, "MainFormViewModel.FetchAndAnalyzeAsync");
@@ -58,7 +62,7 @@ public class MainFormViewModel
     public FinanceReport GetAnalysis()
     {
         FinanceReport financeReport = new();
-        
+
         financeReport.CashFlow = _dataAnalyzer.CalculateCashFlow(_currentTransactions);
         financeReport.BiggestExpense = _dataAnalyzer.FindBiggestExpense(_currentTransactions);
         financeReport.TopContributors = _dataAnalyzer.GetTop3Contributors(_currentTransactions);

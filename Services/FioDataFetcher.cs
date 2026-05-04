@@ -47,9 +47,9 @@ public class FioDataFetcher : IDataFetcher
             });
 
             var page = await browser.NewPageAsync();
-            
+
             cancellationToken.ThrowIfCancellationRequested();
-            await page.GotoAsync(fioAccountUrl, new PageGotoOptions { WaitUntil = WaitUntilState.NetworkIdle, Timeout = 5000});
+            await page.GotoAsync(fioAccountUrl, new PageGotoOptions { WaitUntil = WaitUntilState.NetworkIdle, Timeout = 20000 });
             cancellationToken.ThrowIfCancellationRequested();
 
             await page.WaitForSelectorAsync("//table[contains(@class,'table')]/tbody/tr");
@@ -60,8 +60,14 @@ public class FioDataFetcher : IDataFetcher
         catch (PlaywrightException ex)
         {
             ExceptionHandler.HandleException(ex, "FioDataFetcher.FetchTransactionsAsync");
-            throw new DataFetchException(fioAccountUrl, "Playwright failed",ex);
+            throw new DataFetchException(fioAccountUrl, "Playwright failed", ex);
         }
+
+        catch (OperationCanceledException)
+        {
+            throw;
+        }
+
         catch (Exception ex)
         {
             ExceptionHandler.HandleException(ex, "FioDataFetcher.FetchTransactionsAsync");

@@ -26,9 +26,10 @@ public class DataFetchException : DashboardException
 
     public DataFetchException(string url, string message, Exception? inner, int? statusCode = null)
         : base(
-            $"Failed to fetch from {url}: {message}",
-            "Nepodařilo se načíst data z Fio banky. Zkontroluj URL a připojení.",
-            inner?.ToString()
+        $"Failed to fetch from {url}: {message}",
+        "Nepodařilo se načíst data...",
+        inner?.ToString(),
+        inner
         )
     {
         Url = url;
